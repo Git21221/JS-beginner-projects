@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Game</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            user-select: none;
+            user-zoom: fixed;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            row-gap: 0;
+            column-gap: 0;
+        }
+        .row{
+            display: flex;
+        }
+        .box{
+            padding: 23px 20px;
+            font-size: 40px;
+            font-weight: bolder;
+            /* background-color: rgb(186, 255, 232); */
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="box" name="0"></div>
+            <div class="box" name="1"></div>
+            <div class="box" name="2"></div>
+        </div>
+        <div class="row">
+            <div class="box" name="3"></div>
+            <div class="box" name="4"></div>
+            <div class="box" name="5"></div>
+        </div>
+        <div class="row">            
+            <div class="box" name="6"></div>
+            <div class="box" name="7"></div>
+            <div class="box" name="8"></div>
+        </div>
+    </div>
+    <div class="answer"></div>
+</body>
+<script>
+    const boxes = document.querySelectorAll('.box');
+    const answer = document.querySelector('.answer');
+    let isOorX = false; //false means O and true means X
+    let clicked = new Array(9);
+    boxes.forEach((box) => {
+        box.addEventListener('click', () => {
+            if(isOorX === false && !clicked[box.getAttribute('name')]){
+                box.innerHTML = 'O';
+                box.style.padding = '0 4.5px';
+                isOorX = true;
+                console.log(box.getAttribute('name'));
+                clicked[box.getAttribute('name')] = 1;
+            }
+            else if(isOorX === true && !clicked[box.getAttribute('name')]) {
+                box.innerHTML = 'X';
+                box.style.padding = '0 6.5px';
+                isOorX = false;
+                console.log(box.getAttribute('name'));
+                clicked[box.getAttribute('name')] = 1;
+            }
+            for(let i = 0; i < 9; i++){
+                for(let j = 0; j < 9; j++){
+                    for(let k = 0; k < 9; k++){
+                        if(i === 0 && j === 1 && k === 2 && clicked[i] && clicked[j] && clicked[k]
+                        || i === 3 && j === 4 && k === 5 && clicked[i] && clicked[j] && clicked[k]
+                        || i === 6 && j === 7 && k === 8 && clicked[i] && clicked[j] && clicked[k]
+                        || i === 0 && j === 4 && k === 8 && clicked[i] && clicked[j] && clicked[k]
+                        || i === 2 && j === 4 && k === 6 && clicked[i] && clicked[j] && clicked[k]
+                        || i === 0 && j === 3 && k === 6 && clicked[i] && clicked[j] && clicked[k]
+                        || i === 1 && j === 4 && k === 7 && clicked[i] && clicked[j] && clicked[k]
+                        || i === 2 && j === 5 && k === 8 && clicked[i] && clicked[j] && clicked[k]
+                        ) {
+                            answer.innerHTML = "won";
+                            break;
+                        }
+                        else{
+                            answer.innerHTML = "tie";
+                        }
+                    }
+                }
+            }
+        })
+    })
+</script>
+</html>
