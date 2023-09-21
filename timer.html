@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #212121;
+            color: white;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            font-family: "Outfit", sans-serif;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            column-gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        input {
+            padding: 10px;
+            font-weight: bolder;
+        }
+
+        .resultOfLap {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 40px;
+            column-gap: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="submit" class="day" value="0">
+        <input type="submit" class="hour" value="0">
+        <input type="submit" class="min" value="0">
+        <input type="submit" class="sec" value="0">
+        <!-- <input type = "submit" class="ms" value = "00"> -->
+    </div>
+    <div class="btns">
+        <input type="submit" value="Start" class="start">
+        <input type="submit" value="Stop" class="stop">
+        <input type="submit" value="Reset" class="reset">
+        <input type="submit" value="Lap" class="lap">
+    </div>
+    <!-- <div class="resultOfLap">
+        <div class="resDay">0</div>:<div class="resHour">0</div>:<div class="resMin">0</div>:<div class="resSec">0</div>
+    </div> -->
+</body>
+<script>
+    // const ms = document.querySelector('.ms');
+    const sec = document.querySelector('.sec');
+    const min = document.querySelector('.min');
+    const hour = document.querySelector('.hour');
+    const day = document.querySelector('.day');
+    const start = document.querySelector('.start');
+    const stop = document.querySelector('.stop');
+    const reset = document.querySelector('.reset');
+    const lap = document.querySelector('.lap');
+    const body = document.querySelector('body');
+    let interval;
+    start.addEventListener('click', () => {
+        interval1 = setInterval(() => {
+            sec.value = parseInt(sec.value) + 1;
+            if (parseInt(sec.value) === 60) {
+                sec.value = 0;
+            }
+        }, 1000)
+        interval2 = setInterval(() => {
+            min.value = parseInt(min.value) + 1;
+            if (parseInt(min.value) === 60) {
+                min.value = 0;
+            }
+        }, 60000)
+        interval3 = setInterval(() => {
+            hour.value = parseInt(hour.value) + 1;
+            if (parseInt(hour.value) === 24) {
+                hour.value = 0;
+            }
+        }, 3600000)
+        interval4 = setInterval(() => {
+            day.value = parseInt(day.value) + 1;
+        }, 86400000)
+    })
+    stop.addEventListener('click', () => {
+        clearInterval(interval1);
+        clearInterval(interval2);
+        clearInterval(interval3);
+        clearInterval(interval4);
+    })
+    reset.addEventListener('click', () => {
+        // clearInterval(interval);
+        clearInterval(interval1);
+        clearInterval(interval2);
+        clearInterval(interval3);
+        clearInterval(interval4);
+        // ms.value = 0;
+        sec.value = 0;
+        min.value = 0;
+        hour.value = 0;
+        day.value = 0;
+    })
+    lap.addEventListener('click', () => {
+        const result = document.createElement('div');
+        const resultDay = document.createElement('div');
+        const resultHour = document.createElement('div');
+        const resultMin = document.createElement('div');
+        const resultSec = document.createElement('div');
+        result.setAttribute('class', 'resultOfLap');
+        result.appendChild(resultDay);
+        result.appendChild(resultHour);
+        result.appendChild(resultMin);
+        result.appendChild(resultSec);
+        body.appendChild(result);
+        resultDay.innerHTML = day.value;
+        resultHour.innerHTML = hour.value;
+        resultMin.innerHTML = min.value;
+        resultSec.innerHTML = sec.value;
+    })
+</script>
+
+</html>
