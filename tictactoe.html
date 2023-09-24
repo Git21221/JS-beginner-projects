@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe Game</title>
     <style>
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -13,16 +14,19 @@
             user-select: none;
             user-zoom: fixed;
         }
-        .container{
+
+        .container {
             display: flex;
             flex-direction: column;
             row-gap: 0;
             column-gap: 0;
         }
-        .row{
+
+        .row {
             display: flex;
         }
-        .box{
+
+        .box {
             padding: 23px 20px;
             font-size: 40px;
             font-weight: bolder;
@@ -32,6 +36,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -44,7 +49,7 @@
             <div class="box" name="4"></div>
             <div class="box" name="5"></div>
         </div>
-        <div class="row">            
+        <div class="row">
             <div class="box" name="6"></div>
             <div class="box" name="7"></div>
             <div class="box" name="8"></div>
@@ -54,44 +59,55 @@
 </body>
 <script>
     const boxes = document.querySelectorAll('.box');
+    // console.log(boxes);
     const answer = document.querySelector('.answer');
     let isOorX = false; //false means O and true means X
-    let clicked = new Array(9);
+    let clicked = [];
     boxes.forEach((box) => {
         box.addEventListener('click', () => {
-            if(isOorX === false && !clicked[box.getAttribute('name')]){
+            // console.log(clicked[box.getAttribute('name')]);
+            if (isOorX === false && (clicked[box.getAttribute('name')] !== 'X' && clicked[box.getAttribute('name')] !== 'O')) {
                 box.innerHTML = 'O';
-                box.style.padding = '0 4.5px';
                 isOorX = true;
-                console.log(box.getAttribute('name'));
-                clicked[box.getAttribute('name')] = 1;
+                clicked[box.getAttribute('name')] = 'O';
             }
-            else if(isOorX === true && !clicked[box.getAttribute('name')]) {
+            else if (isOorX === true && (clicked[box.getAttribute('name')] !== 'X' && clicked[box.getAttribute('name')] !== 'O')) {
                 box.innerHTML = 'X';
-                box.style.padding = '0 6.5px';
                 isOorX = false;
-                console.log(box.getAttribute('name'));
-                clicked[box.getAttribute('name')] = 1;
+                clicked[box.getAttribute('name')] = 'X';
             }
-            for(let i = 0; i < 9; i++){
-                for(let j = 0; j < 9; j++){
-                    for(let k = 0; k < 9; k++){
-                        if(i === 0 && j === 1 && k === 2 && clicked[i] && clicked[j] && clicked[k]
-                        || i === 3 && j === 4 && k === 5 && clicked[i] && clicked[j] && clicked[k]
-                        || i === 6 && j === 7 && k === 8 && clicked[i] && clicked[j] && clicked[k]
-                        || i === 0 && j === 4 && k === 8 && clicked[i] && clicked[j] && clicked[k]
-                        || i === 2 && j === 4 && k === 6 && clicked[i] && clicked[j] && clicked[k]
-                        || i === 0 && j === 3 && k === 6 && clicked[i] && clicked[j] && clicked[k]
-                        || i === 1 && j === 4 && k === 7 && clicked[i] && clicked[j] && clicked[k]
-                        || i === 2 && j === 5 && k === 8 && clicked[i] && clicked[j] && clicked[k]
-                        ) {
-                            answer.innerHTML = "won";
-                            break;
-                        }
+            let positionsArray = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 4, 8],
+                [2, 4, 6],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8]
+            ];
+            // let sign = clicked[0][0];
+            let first, zero = 0, x = 0;
+            for(let index = 0; index < 8; index++){
+                for(let pos = 0; pos < 3; pos++){
+                    //checking for 'O'
+                    if(clicked[positionsArray[index][pos]] === 'O'){
+                        ++zero;
+                        // console.log(`zero is: ${zero}`);
+                    }
+                    //checking for 'X'
+                    else if(clicked[positionsArray[index][pos]] === 'X'){
+                        ++x;
+                        // console.log(`x is: ${x}`);
                     }
                 }
+                if(zero === 3) answer.innerHTML = "won O wala player";
+                else if(x === 3) answer.innerHTML = "won X wala player";
+                zero = 0;
+                x = 0;
             }
         })
     })
 </script>
+
 </html>
