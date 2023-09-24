@@ -1,0 +1,53 @@
+:root {
+    --white-color-lv5: #dfdfdf;
+    --dark-color-lv5: #212121;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a, a:hover, a:link, a:visited, a:active{
+    text-decoration: none;
+    color: var(--white-color-lv5);
+}
+
+body {
+    padding: 20px;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 30px;
+    height: 100vh;
+    background: linear-gradient(135deg, rgb(212, 0, 240), rgb(0, 101, 216));
+    color: var(--white-color-lv5);
+}
+
+.projectsName {
+    display: flex;
+    padding: 0.5rem 1.5rem;
+    background: rgba(255, 255, 255, 0.178);
+    -webkit-box-shadow: 10px 10px 77px -15px rgba(0, 0, 0, 0.733);
+    -moz-box-shadow: 10px 10px 77px -15px rgba(0, 0, 0, 0.75);
+    box-shadow: 10px 10px 77px -15px rgba(0, 0, 0, 0.75);
+    border-radius: 30px;
+    transition: 0.3s ease-in-out;
+}
+.projectsName:hover {
+    background: rgba(255, 255, 255, 0.295);
+    cursor: pointer;
+}
+
+.gamesAndProjects {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    flex-basis: auto;
+    overflow: hidden;
+    row-gap: 20px;
+    column-gap: 20px;
+    align-items: center;
+    justify-content: center;
+}

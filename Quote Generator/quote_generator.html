@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    The quote of the day is: <div class="quote"></div>
+</body>
+<script>
+    const quote = document.querySelector('.quote');
+    fetch('https://api.quotable.io/random')
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        quote.innerHTML = data.content;
+    })
+    .catch((error) => {
+        quote.innerHTML = "sorry not found any quote right now";
+    })
+</script>
+</html>

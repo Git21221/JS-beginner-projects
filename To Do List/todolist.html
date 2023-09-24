@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #212121;
+            color: white;
+        }
+        input{
+            background: transparent;
+            border: 1px solid white;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <label for="Heading for task name">Task Name: </label>
+    <input type="text" id="taskName"><br>
+    <label for="Heading for task name">Description: </label>
+    <input type="text" id="taskDes"><br>
+    <input type="submit" value="Add" id="addBtn">
+    <!-- <section class="answerSection">
+        <div class="tasksAddedName">Task name</div>
+        <span class="tasksAddedName">Description</span>
+        <span>
+            <span class="edit">Edit</span>
+            <span class="remove">X</span>
+        </span>
+    </section> -->
+</body>
+<script>
+    const taskName = document.querySelector('#taskName');
+    const taskDes = document.querySelector('#taskDes');
+    const addBtn = document.querySelector('#addBtn');
+    // localStorage.removeItem("Tasks")
+    const taskArray = localStorage.getItem("taskArray") ? JSON.parse(localStorage.getItem("taskArray")) : [];
+    // localStorage.removeItem("Tasks");
+    // const tasksArray = localStorage.getItem("tasksArray") ? JSON.parse(localStorage.getItem("tasksArray")) : [];
+    addBtn.addEventListener('click', () => {
+        taskArray.push({
+            title: taskName.value,
+            desciprtion: taskDes.value
+        })
+        localStorage.setItem("tasks", JSON.stringify(taskArray));
+    })
+</script>
+</html>

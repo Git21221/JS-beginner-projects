@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Board</title>
+</head>
+<body>
+    <canvas>
+
+    </canvas>
+</body>
+<script>
+    let isDrawing = false;
+    const canvas = document.querySelector('canvas');
+    ctx = canvas.getContext('2d');
+    window.addEventListener('load', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    })
+    const startDraw = () => {
+        isDrawing = true;
+        ctx.beginPath();
+        ctx.lineWidth = 6;
+    }
+    const drawing = (e) => {
+        if(!isDrawing) return;
+        ctx.lineTo(e.offsetX, e.offsetY);
+        ctx.stroke();
+    }
+    canvas.addEventListener("mousedown", startDraw);
+    canvas.addEventListener("mousemove", drawing);
+    canvas.addEventListener("mouseup", () => {
+        isDrawing = false;
+    });
+</script>
+</html>

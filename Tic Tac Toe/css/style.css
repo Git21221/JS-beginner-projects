@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Outfit", sans-serif;
+    user-select: none;
+    user-zoom: fixed;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 20px;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #3a016f,#5b2da6,#b473fa);
+}
+h1{
+    color: rgba(255, 255, 255, 0);
+    font-size: 4rem;
+    -webkit-text-stroke: 1px #fff;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+}
+
+.row {
+    display: flex;
+}
+
+.box {
+    height: 60px;
+    width: 60px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgb(255, 255, 255);
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+}
+.answer{
+    color: white;
+    font-size: 25px;
+}
+.newGame{
+    padding: 10px 20px;
+    color: #aa5fff;
+    background-color:#5b2da6;
+    border: none;
+    font-size: 1.3rem;
+}
