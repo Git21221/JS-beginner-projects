@@ -10,16 +10,31 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: "Poppins", sans-serif;
+            font-family: "Outfit", sans-serif;
             user-select: none;
             user-zoom: fixed;
         }
 
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            row-gap: 20px;
+            height: 100vh;
+            background: linear-gradient(to bottom right, #3a016f,#5b2da6,#b473fa);
+        }
+        h1{
+            color: rgba(255, 255, 255, 0);
+            font-size: 4rem;
+            -webkit-text-stroke: 1px #fff;
+        }
         .container {
             display: flex;
             flex-direction: column;
-            row-gap: 0;
-            column-gap: 0;
+            align-items: center;
+            justify-content: center;
+            row-gap: 20px;
         }
 
         .row {
@@ -27,84 +42,121 @@
         }
 
         .box {
-            padding: 23px 20px;
-            font-size: 40px;
-            font-weight: bolder;
-            /* background-color: rgb(186, 255, 232); */
-            border: 1px solid black;
+            height: 60px;
+            width: 60px;
+            font-size: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgb(255, 255, 255);
             cursor: pointer;
+            color: rgb(255, 255, 255);
+        }
+        .answer{
+            color: white;
+            font-size: 25px;
+        }
+        .newGame{
+            padding: 10px 20px;
+            color: #aa5fff;
+            background-color:#5b2da6;
+            border: none;
+            font-size: 1.3rem;
         }
     </style>
 </head>
 
 <body>
+    <h1>Tic Tac Toe</h1>
     <div class="container">
-        <div class="row">
-            <div class="box" name="0"></div>
-            <div class="box" name="1"></div>
-            <div class="box" name="2"></div>
+        <div class="game">
+            <div class="row">
+                <div class="box" name="0"></div>
+                <div class="box" name="1"></div>
+                <div class="box" name="2"></div>
+            </div>
+            <div class="row">
+                <div class="box" name="3"></div>
+                <div class="box" name="4"></div>
+                <div class="box" name="5"></div>
+            </div>
+            <div class="row">
+                <div class="box" name="6"></div>
+                <div class="box" name="7"></div>
+                <div class="box" name="8"></div>
+            </div>
         </div>
-        <div class="row">
-            <div class="box" name="3"></div>
-            <div class="box" name="4"></div>
-            <div class="box" name="5"></div>
-        </div>
-        <div class="row">
-            <div class="box" name="6"></div>
-            <div class="box" name="7"></div>
-            <div class="box" name="8"></div>
-        </div>
+        <div class="answer"></div>
+        <input type="submit" class="newGame" value="New Game" disabled></div>
     </div>
-    <div class="answer"></div>
 </body>
 <script>
     const boxes = document.querySelectorAll('.box');
-    // console.log(boxes);
+    const newGame = document.querySelector('.newGame');
     const answer = document.querySelector('.answer');
+    let won = false;
     let isOorX = false; //false means O and true means X
     let clicked = [];
     boxes.forEach((box) => {
         box.addEventListener('click', () => {
             // console.log(clicked[box.getAttribute('name')]);
-            if (isOorX === false && (clicked[box.getAttribute('name')] !== 'X' && clicked[box.getAttribute('name')] !== 'O')) {
-                box.innerHTML = 'O';
-                isOorX = true;
-                clicked[box.getAttribute('name')] = 'O';
-            }
-            else if (isOorX === true && (clicked[box.getAttribute('name')] !== 'X' && clicked[box.getAttribute('name')] !== 'O')) {
-                box.innerHTML = 'X';
-                isOorX = false;
-                clicked[box.getAttribute('name')] = 'X';
-            }
-            let positionsArray = [
-                [0, 1, 2],
-                [3, 4, 5],
-                [6, 7, 8],
-                [0, 4, 8],
-                [2, 4, 6],
-                [0, 3, 6],
-                [1, 4, 7],
-                [2, 5, 8]
-            ];
-            // let sign = clicked[0][0];
-            let first, zero = 0, x = 0;
-            for(let index = 0; index < 8; index++){
-                for(let pos = 0; pos < 3; pos++){
-                    //checking for 'O'
-                    if(clicked[positionsArray[index][pos]] === 'O'){
-                        ++zero;
-                        // console.log(`zero is: ${zero}`);
-                    }
-                    //checking for 'X'
-                    else if(clicked[positionsArray[index][pos]] === 'X'){
-                        ++x;
-                        // console.log(`x is: ${x}`);
-                    }
+            if(!won){
+                if (isOorX === false && (clicked[box.getAttribute('name')] !== 'X' && clicked[box.getAttribute('name')] !== 'O')) {
+                    box.innerHTML = 'O';
+                    isOorX = true;
+                    clicked[box.getAttribute('name')] = 'O';
                 }
-                if(zero === 3) answer.innerHTML = "won O wala player";
-                else if(x === 3) answer.innerHTML = "won X wala player";
-                zero = 0;
-                x = 0;
+                else if (isOorX === true && (clicked[box.getAttribute('name')] !== 'X' && clicked[box.getAttribute('name')] !== 'O')) {
+                    box.innerHTML = 'X';
+                    isOorX = false;
+                    clicked[box.getAttribute('name')] = 'X';
+                }
+                let positionsArray = [
+                    [0, 1, 2],
+                    [3, 4, 5],
+                    [6, 7, 8],
+                    [0, 4, 8],
+                    [2, 4, 6],
+                    [0, 3, 6],
+                    [1, 4, 7],
+                    [2, 5, 8]
+                ];
+                // let sign = clicked[0][0];
+                let first, zero = 0, x = 0;
+                for(let index = 0; index < 8; index++){
+                    for(let pos = 0; pos < 3; pos++){
+                        //checking for 'O'
+                        if(clicked[positionsArray[index][pos]] === 'O'){
+                            ++zero;
+                            // console.log(`zero is: ${zero}`);
+                        }
+                        //checking for 'X'
+                        else if(clicked[positionsArray[index][pos]] === 'X'){
+                            ++x;
+                            // console.log(`x is: ${x}`);
+                        }
+                    }
+                    if(zero === 3){
+                        answer.innerHTML = "Won O wala player";
+                        newGame.removeAttribute('disabled');
+                        newGame.style.color = '#fff';
+                        won = true;
+                        newGame.addEventListener('click', () => {
+                            window.location.reload();
+                        })
+                    }
+                    else if(x === 3) {
+                        answer.innerHTML = "Won X wala player";
+                        newGame.removeAttribute('disabled');
+                        newGame.style.color = '#fff';
+                        won = true;
+                        newGame.addEventListener('click', () => {
+                            window.location.reload();
+                        })
+                    }
+                    zero = 0;
+                    x = 0;
+                }
             }
         })
     })
