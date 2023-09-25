@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
     <input type="text" name="cityname" id="cityname" placeholder="Enter your city name">
     <input type="submit" name="search" id="searchbtn" value="Search">
@@ -16,50 +19,11 @@
             <b>Wind: </b> <span class="wind"></span>
         </div>
         <div class="visibility">
-            <b>Visibility: </b><span class="vis"></span>
+            <b>Humidity: </b><span class="vis"></span>
         </div>
     </div>
 </body>
-<script>
-    const API_key = "cf6dd317645d0aaf819fefd7a8db5bb3";
-    const sbmt = document.querySelector('#searchbtn');
-    const temp = document.querySelector('.temperature');
-    const wind = document.querySelector('.wind');
-    const vis = document.querySelector('.vis');
-    let city_name;
-    let lon;
-    let lat;
-    sbmt.addEventListener('click', () => {
-        city_name = document.querySelector('#cityname').value;
-        console.log(city_name);
-        const apiforlonlat = `http://api.openweathermap.org/geo/1.0/direct?q=${city_name}&appid=${API_key}`;
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', apiforlonlat);
-        xhr.onreadystatechange = () => {
-            if(xhr.readyState === 4){
-                const apiInfo = JSON.parse(xhr.responseText);
-                lat = apiInfo[0].lat.toFixed(4);
-                lon = apiInfo[0].lon.toFixed(4);
-                console.log(apiInfo[0].lat.toFixed(4));
-                console.log(apiInfo[0].lon.toFixed(4));
-            }
-        }
-        () => {
-            const apiWeather = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_key}`;
-            const weatherXhr = new XMLHttpRequest();
-            weatherXhr.open('GET', apiWeather);
-            weatherXhr.onreadystatechange = () => {
-                if(weatherXhr.readyState === 4){
-                    const apiInfo = JSON.parse(weatherXhr.responseText);
-                    console.log(apiInfo);
-                    vis.innerText = `${apiInfo.visibility / 1000} KM`;
-                    wind.innerText = `Speed (${apiInfo.wind.speed}) and angle (${apiInfo.wind.deg})`;
-                    temp.innerText = `Temperature (${Math.round(apiInfo.main.temp - 272.15)}) and feels like (${Math.round(apiInfo.main.feels_like - 272.15)})`;
-                }
-            }
-            weatherXhr.send();
-        }
-        xhr.send();
-    })
+<script src="js/script.js">
 </script>
+
 </html>

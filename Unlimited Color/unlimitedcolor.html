@@ -4,29 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unlimited Color</title>
-    <style>
-
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>Start should change the background color every seocnd</h1>
     <button id="start">start</button>
     <button id="stop">stop</button>
 </body>
-<script>
-    const body = document.querySelector('body');
-    const start = document.querySelector('#start').addEventListener('click', startChange);
-    const stop = document.querySelector('#stop').addEventListener('click', stopChange);
-    let interval;
-    function startChange(){
-        function changebg(){
-            body.style.backgroundColor = `rgb(${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)}, ${Math.round(Math.random() * 255)})`;
-        }
-        if(!interval) interval = setInterval(changebg, 1000);
-    }
-    function stopChange(){
-        clearInterval(interval);
-        interval = null;
-    }
-</script>
+<script src="js/script.js"></script>
 </html>
