@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    row-gap: 20px;
+    background-color: #212121;
+    color: white;
+    font-family: "Outfit", sans-serif;
+}
+.clock{
+    background-color: rgb(255, 198, 9);
+    height: 50px;
+    width: 200px;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
