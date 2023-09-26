@@ -18,6 +18,29 @@ const heightcss = document.querySelector('.heightcss');
 const width = document.querySelector('#bxwidth');
 const widthcss = document.querySelector('.widthcss');
 let shadow = '#878787';
+let parameterLable = document.querySelector(".lable-container h2 i");
+let codeLable = document.querySelector(".lable i");
+let parameterBox = false;
+let codeBox = false;
+parameterLable.addEventListener('click',function(){
+    if(parameterBox===false){
+        document.querySelector(".parameter").style.maxHeight = 800 + "px";
+        parameterBox = true;
+    }else{
+        document.querySelector(".parameter").style.maxHeight = 0 + "px";
+        parameterBox= false;
+    }
+    
+})
+codeLable.addEventListener('click',function(){
+    if(codeBox===false){
+        document.querySelector("code").style.maxHeight = 800 + "px";
+        codeBox = true;
+    }else{
+        document.querySelector("code").style.maxHeight = 0 + "px";
+        codeBox= false;
+    }
+})
 bxrad.addEventListener('input', () => {
     brrad.innerHTML = `${bxrad.value}`;
     box.style.borderRadius = `${bxrad.value}px`;
