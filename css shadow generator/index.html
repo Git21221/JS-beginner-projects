@@ -4,42 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS shadow generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    Background Color: <input type="color" name="" id="bgColor">
-    Box Color: <input type="color" name="" id="boxColor">
-    Shadow Color: <input type="color" name="" id="shadowColor" value="#878787">
-    DistanceX: <input type="range" name="" id="distanceX" class="ranges" value="-2" min="-100" max="200">
-    DistanceY: <input type="range" name="" id="distanceY" class="ranges" value="-1" min="-100" max="200">
-    Blur: <input type="range" name="" id="blurr" class="ranges" value="26" min="0" max="200">
-    Spread: <input type="range" name="" id="spread" class="ranges" value="1" min="-100" max="200">
-    Box Height: <input type="range" name="" id="bxheight" class="ranges" value="200" min="0" max="500">
-    Box Width: <input type="range" name="" id="bxwidth" class="ranges" value="200" min="0" max="500">
-    border-radius: <input type="range" name="" id="bxrad" class="ranges" value="0" min="0" max="500">
-    <div class="box"></div>
-    <code>
-        <div class="bgcss">
-            <pre>
-body{
-    background: <span class="bgcolor">#fff</span>;
-}
-            </pre>
+    <div id="full-panel">
+        <h1>Box Shadow Generator</h1>
+        <div id="main">
+            <div class="box"></div>
+            <div class="parameter-content">
+                <div class="parameter-lable">
+                    <div class="lable-container">
+                        <h2>Change Manually<i class="bi bi-plus-lg" style="margin-left: 10px; cursor: pointer;"></i></h2>
+                    </div>
+                    <div class="parameter">
+                        Background Color: <input type="color" name="" id="bgColor"  class="color-width">
+                        Box Color: <input type="color" name="" id="boxColor" class="color-width">
+                        Shadow Color: <input type="color" name="" id="shadowColor" value="#878787" class="color-width">
+                        DistanceX: <input type="range" name="" id="distanceX" class="ranges" value="-2" min="-100" max="200">
+                        DistanceY: <input type="range" name="" id="distanceY" class="ranges" value="-1" min="-100" max="200">
+                        Blur: <input type="range" name="" id="blurr" class="ranges" value="26" min="0" max="200">
+                        Spread: <input type="range" name="" id="spread" class="ranges" value="1" min="-100" max="200">
+                        Box Height: <input type="range" name="" id="bxheight" class="ranges" value="200" min="0" max="500">
+                        Box Width: <input type="range" name="" id="bxwidth" class="ranges" value="200" min="0" max="500">
+                        border-radius: <input type="range" name="" id="bxrad" class="ranges" value="0" min="0" max="500">
+                    </div>
+                </div>
+            </div>
+            
+            
         </div>
-        <div class="bxcss">
-            <pre>
-.box{
-    background: <span class="bxcolor">#fff</span>;
-    height: <span>200</span>px;
-    width: <span>200</span>px;
-    box-shadow: <span class="css">-2px -1px 26px 1px #878787</span>;
-    border-radius: <span class="brrad">0</span>px;
-    height: <span class="heightcss">200</span>px;
-    width: <span class="widthcss">200</span>px;
-}
-            </pre>
+        
+        <div class="block">
+            <div class="lable">
+                <h2>Code</h2>
+                <i class="bi bi-plus-lg"></i>
+            </div>
+            <code>
+                <div class="bgcss">
+                    <pre>
+        body{
+            background: <span class="bgcolor">#fff</span>;
+        }
+                    </pre>
+                </div>
+                <div class="bxcss">
+                    <pre>
+        .box{
+            background: <span class="bxcolor">#fff</span>;
+            height: <span>200</span>px;
+            width: <span>200</span>px;
+            box-shadow: <span class="css">-2px -1px 26px 1px #878787</span>;
+            border-radius: <span class="brrad">0</span>px;
+            height: <span class="heightcss">200</span>px;
+            width: <span class="widthcss">200</span>px;
+        }
+                    </pre>
+                </div>
+            </code>
         </div>
-    </code>
+    </div>
+    
+    
 </body>
 <script src="js/script.js"></script>
 </html>

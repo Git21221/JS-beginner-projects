@@ -1,13 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
 }
 html , body{
     height: 100%;
     width: 100%;
-    background: black;
-    color: white;
+    
 }
 .box{
     background: rgb(0, 0, 0);
@@ -15,4 +16,81 @@ html , body{
     width: 200px;
     margin: 50px;
     box-shadow: -2px -1px 26px 1px grey;
+}
+body{
+    background: #000;
+    color: white;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#full-panel{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+}
+#full-panel h1{
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+#main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+}
+.parameter-lable{
+    display: flex;
+    flex-direction: column;
+}
+.parameter{
+    /* padding: 15px; */
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: all ease 0.8s;
+}
+.block{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.block code{
+    max-height: 0;
+    overflow: hidden;
+    transition: all ease 0.8s;
+}
+.lable{
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #fff;
+    margin-bottom: 10px;
+}
+.color-width{
+    width: 100%;
+    cursor:crosshair;
+}
+.lable-container{
+    border: 1px solid #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.lable-container h2{
+    font-size: 16px;
+}
+.lable h2{
+    font-size: 22px;
+}
+.lable i:hover{
+    cursor: pointer;
 }
