@@ -64,6 +64,7 @@ boxes.forEach((box) => {
                 zero = 0;
                 x = 0;
             }
+            window.location.reload();
         }
     })
 })

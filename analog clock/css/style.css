@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+    font-family: 'Outfit', sans-serif;
+    background-color: #212121;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.clockOuterRing{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.clockOuterRing::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url('../back.jpg');
+    /* background-position: center; */
+    background-size: contain;
+    border-radius: 50%;
+    opacity: 0.3;
+}
+.centerPart{
+    height: 10px;
+    width: 10px;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    position: absolute;
+}
+#second, #minute, #hour{
+    position: absolute;
+    height: 1px;
+    border: none;
+    background: rgb(255, 255, 255);
+    transform-origin: bottom;
+}
+#second{
+    width: 1%;
+    height: 40%;
+    top: 10%;
+    left: 49.25%;
+}
+#second::before{
+    content: '';
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    opacity: 1;
+    background: #a6ff0029;
+    box-shadow: 0px 0px 90px 20px #a6ff00;
+    left: -5px;
+    top: -10px;
+}
+#minute{
+    width: 2%;
+    height: 30%;
+    top: 20%;
+    left: 48.9%;
+}
+#hour{
+    width: 3%;
+    height: 20%;
+    top: 30%;
+    left: 48.5%;
+}
+.timePoint1, .timePoint2, .timePoint3, .timePoint4, .timePoint5, .timePoint6{
+    position: absolute;
+    height: 148px;
+    width: 2px;
+    border: none;
+    background: #21212100;
+}
+.timePoint2{
+    rotate: 30deg;
+}
+.timePoint3{
+    rotate: 60deg;
+}
+.timePoint4{
+    rotate: 90deg;
+}
+.timePoint5{
+    rotate: 120deg;
+}
+.timePoint6{
+    rotate: 150deg;
+}
+.timePoint1::after, .timePoint2::after, .timePoint3::after, .timePoint4::after, .timePoint5::after, .timePoint6::after{
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 5px;
+    background: rgba(149, 255, 206, 0.253);
+    left: -1.5px;
+}
+.timePoint1::before, .timePoint2::before, .timePoint3::before, .timePoint4::before, .timePoint5::before, .timePoint6::before{
+    content: '';
+    position: absolute;
+    height: 20px;
+    width: 5px;
+    background: rgba(149, 255, 206, 0.253);
+    left: -1.5px;
+    top: 128px;
+}
