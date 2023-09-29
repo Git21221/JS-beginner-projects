@@ -59,12 +59,9 @@ html , body{
 #second::before{
     content: '';
     position: absolute;
-    height: 10px;
-    width: 10px;
     border-radius: 50%;
     opacity: 1;
-    background: #a6ff0029;
-    box-shadow: 0px 0px 90px 20px #a6ff00;
+    box-shadow: 0px 0px 90px 30px #00d9ff;
     left: -5px;
     top: -10px;
 }
@@ -107,7 +104,8 @@ html , body{
     position: absolute;
     height: 20px;
     width: 5px;
-    background: rgba(149, 255, 206, 0.253);
+    background: rgb(0, 255, 221);
+    box-shadow: 0px 0px 50px 2px cyan;
     left: -1.5px;
 }
 .timePoint1::before, .timePoint2::before, .timePoint3::before, .timePoint4::before, .timePoint5::before, .timePoint6::before{
@@ -115,7 +113,8 @@ html , body{
     position: absolute;
     height: 20px;
     width: 5px;
-    background: rgba(149, 255, 206, 0.253);
+    background: rgb(0, 255, 221);
+    box-shadow: 0px 0px 50px 2px cyan;
     left: -1.5px;
     top: 128px;
 }
