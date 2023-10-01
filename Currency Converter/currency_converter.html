@@ -1,31 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
 </head>
-
 <body>
-    <input type="text" name="" id="">
-    <select name="" id="from">
-        <option value="select a value">Please Select</option>
-        <option value="select a value">United States Doller</option>
-        <option value="select a value">Please Select</option>
-        <option value="select a value">Please Select</option>
-        <option value="select a value">Please Select</option>
-        <option value="select a value">Please Select</option>
-        <option value="select a value">Please Select</option>
-        <option value="select a value">Please Select</option>
+    <input type="text" id="amount" placeholder="Enter Amount">
+    <select id="from">
+        <option value="USD">United States Dollar (USD)</option>
+        <option value="EUR">Euro (EUR)</option>
+        <option value="GBP">British Pound Sterling (GBP)</option>
+        <option value="JPY">Japanese Yen (JPY)</option>
+        <option value="INR">Indian Rupee (INR)</option>
     </select>
-    <input type="text" name="" id="">
-    <select name="" id="to">
-        
+    <input type="text" id="convertedAmount" readonly>
+    <select id="to">
+        <option value="USD">United States Dollar (USD)</option>
+        <option value="EUR">Euro (EUR)</option>
+        <option value="GBP">British Pound Sterling (GBP)</option>
+        <option value="JPY">Japanese Yen (JPY)</option>
+        <option value="INR">Indian Rupee (INR)</option>
     </select>
+
+    <script>
+        const amountInput = document.getElementById('amount');
+        const fromCurrencySelect = document.getElementById('from');
+        const convertedAmountInput = document.getElementById('convertedAmount');
+        const toCurrencySelect = document.getElementById('to');
+
+        amountInput.addEventListener('input', convertCurrency);
+        fromCurrencySelect.addEventListener('change', convertCurrency);
+        toCurrencySelect.addEventListener('change', convertCurrency);
+
+        async function convertCurrency() {
+            const amount = parseFloat(amountInput.value);
+            const fromCurrency = fromCurrencySelect.value;
+            const toCurrency = toCurrencySelect.value;
+
+            if (!isNaN(amount)) {
+                try {
+                    const response = await fetch(`https://api.exchangerate-api.com/v4/latest/${fromCurrency}`);
+                    const data = await response.json();
+
+                    if (data.rates[toCurrency]) {
+                        const conversionRate = data.rates[toCurrency];
+                        const convertedAmount = amount * conversionRate;
+                        convertedAmountInput.value = convertedAmount.toFixed(2);
+                    } else {
+                        convertedAmountInput.value = 'Currency not supported';
+                    }
+                } catch (error) {
+                    console.error('Error fetching conversion rate data:', error);
+                }
+            } else {
+                convertedAmountInput.value = '';
+            }
+        }
+    </script>
 </body>
-<script>
-
-</script>
-
 </html>
