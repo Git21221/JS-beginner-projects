@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -12,11 +14,30 @@ body {
     row-gap: 20px;
     background-color: #212121;
     color: white;
-    font-family: "Outfit", sans-serif;
+    font-family: 'Press Start 2P',
+        sans-serif;
     height: 100vh;
 }
 
-form{
+.number {
+    background: white;
+    color: #333;
+    font-size: 2rem;
+    width: 6rem;
+    height: 6rem;
+    padding-top: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+
+    text-align: center;
+
+
+
+
+}
+
+form {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -29,12 +50,33 @@ input {
     border-radius: 30px;
     margin: 10px;
     font-size: 0.9rem;
+    font-family: 'Press Start 2P',
+        sans-serif;
+    background-color: white;
 }
-input:focus{
+
+input:focus {
     outline: 2px solid rgb(255, 0, 0);
 }
-code{
+
+code {
     background: rgb(83, 83, 83);
     padding: 10px;
+    font-family: 'Press Start 2P',
+        sans-serif;
     border-radius: 10px;
+}
+
+.prevGuess,
+.remainguess {
+    margin: 1rem 0;
+}
+
+#newGame {
+    margin: 2rem 0;
+    cursor: pointer;
+    border-width: 2px;
+    border-radius: 1px;
+
+
 }
