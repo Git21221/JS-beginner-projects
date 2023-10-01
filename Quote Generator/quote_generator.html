@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    The quote of the day is: <div class="quote"></div>
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+    
+    <div class="heading"> <div class="line"></div> The quote of the day <div class="line"></div></div>
+    <div class="wrapper">
+        <div class="quote"></div>
+    </div>
+    <button onclick="quotes()">Generate</button>
 </body>
 <script src="js/script.js"></script>
+
 </html>

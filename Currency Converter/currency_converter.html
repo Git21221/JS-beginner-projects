@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input type="text" id="amount" placeholder="Enter Amount">
+    <main class="container">
+        <div class="title">Currency Calculator</div>
+    <article class="card">
+    <div class="sec1">
+    <span class="subtitle">Currency I have</span>
     <select id="from">
         <option value="USD">United States Dollar (USD)</option>
         <option value="EUR">Euro (EUR)</option>
@@ -14,7 +19,10 @@
         <option value="JPY">Japanese Yen (JPY)</option>
         <option value="INR">Indian Rupee (INR)</option>
     </select>
-    <input type="text" id="convertedAmount" readonly>
+     <input type="text" id="amount" placeholder="Enter Amount">
+    </div>
+    <div class="sec2">
+     <span  class="subtitle">Currency I want</span>
     <select id="to">
         <option value="USD">United States Dollar (USD)</option>
         <option value="EUR">Euro (EUR)</option>
@@ -22,7 +30,14 @@
         <option value="JPY">Japanese Yen (JPY)</option>
         <option value="INR">Indian Rupee (INR)</option>
     </select>
+    <input type="text" id="convertedAmount" readonly>
+    </div>
+   
+        </article>
+        
 
+    </main>
+   
     <script>
         const amountInput = document.getElementById('amount');
         const fromCurrencySelect = document.getElementById('from');

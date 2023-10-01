@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;700&family=Poppins:ital,wght@0,100;0,300;0,400;1,200;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    height: 100vh;
+    background-color: #3AC4D7;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(250, 250, 250);
+    height: 52%;
+    width: 45%;
+    border-radius: 20px;
+    color: #7B7B7B;
+    padding: 5px;
+    filter: drop-shadow(6px 4px rgba(18, 18, 18, 0.132));
+}
+
+.heading {
+    color: #151515;
+    font-size: 35px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-weight: 700;
+    display: flex;
+    text-transform: capitalize;
+}
+
+.quote {
+    font-size: 25px;
+    max-width: 90%;
+}
+
+button {
+    padding: 8px 14px;
+    text-decoration: none;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.line {
+    width: 100px;
+    height: 3px;
+    background: #000;
+}
+
+
+
+
+/* /loader/ */
+
+.loader-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(23, 23, 23, 0.945);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

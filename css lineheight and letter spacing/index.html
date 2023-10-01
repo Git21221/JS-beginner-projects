@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS LineHeight and LetterSpacing</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    Line Height: <input type="range" name="" id="lineheight" min="0" max="40" value="11" step="0">
-    Letter Spacing: <input type="range" name="" id="letterspacing" min="-10" max="50" value="0">
-    <div class="text">
-        I am good Boy <br> I am bad boy
-    </div>
-    <code>
-        <pre>
-.text{
-    line-height: <span class="lineheightcss">1.1</span>;
-    letter-spacing: <span class="letterspacingcss">0</span>px;
-}
-        </pre>
-    </code>
-</body>
-<script src="js/script.js"></script>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSS LineHeight and LetterSpacing</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <main class="app">
+                <div class="inputs-block">
+                    <div class="input">
+                        <p class="input-text">Line Height:</p>
+                        <input type="range" name="" id="lineheight" min="0" max="40" value="11" step="0">
+                    </div>
+                    <div class="input">
+                        <p class="input-text">Letter Spacing:</p>
+                        <input type="range" name="" id="letterspacing" min="-10" max="50" value="0">
+                    </div>
+                </div>
+
+                <div class="text">
+                    I am good Boy <br> I am bad boy
+                </div>
+
+                <pre>
+    .text {
+        line-height: <span class="lineheightcss">1.1</span>;
+        letter-spacing: <span class="letterspacingcss">0</span>px;
+    }                        
+                </pre>
+
+            </main>
+        </div>
+    </body>
+    <script src="js/script.js"></script>
+
 </html>
