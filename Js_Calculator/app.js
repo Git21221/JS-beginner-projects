@@ -4,27 +4,32 @@ let screenValue = '';
 for (item of buttons) {
     item.addEventListener('click', (e) => {
         buttonText = e.target.innerText;
-        
+
         if (buttonText == '*') {
             buttonText = '*';
             screenValue += buttonText;
-            screen.value=screenValue;
+            screen.value = screenValue;
         }
         else if (buttonText == 'C') {
-            screenValue ='';
-            screen.value=screenValue;
+            screenValue = '';
+            screen.value = screenValue;
 
         }
         else if (buttonText == '=') {
-            screen.value=eval(screenValue);
-
+            screen.value = eval(screenValue);
         }
-       
-        else{
+
+        else {
             screenValue += buttonText;
-            screen.value=screenValue;
+            screen.value = screenValue;
         }
     })
 
+
 }
+document.addEventListener("keypress", event => {
+    if (event.keyCode === 13 && screen.value) {
+        screen.value = eval(screen.value);
+    }
+})
 
