@@ -16,12 +16,38 @@ body{
 }
 .clock{
     background-color: rgb(255, 198, 9);
-    height: 50px;
+    height: 90px;
     width: 200px;
     border: 1px solid black;
     border-radius: 10px;
     color: black;
     display: flex;
+    font-size: 1.5rem;
     align-items: center;
     justify-content: center;
+}
+.main{
+    display: flex;
+    flex-direction: row;
+    height: 8rem;
+    justify-content: space-between;
+    align-items: center;
+}
+.text{
+    font-size: 2rem;
+}
+.texts{
+    display: flex ;
+
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 5px 2px;
+
+
+
+}
+.texts span{
+    font-weight: 500;
+    font-size:1.5rem;
+    margin: 2px 15px;
 }
