@@ -1,0 +1,28 @@
+{
+  "name": "game-of-life",
+  "version": "1.0.0",
+  "description": "Game of life implemented with p5.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --watch",
+    "build": "webpack --mode=production",
+    "start": "serve public"
+  },
+  "keywords": ["game-of-life"],
+  "author": "Volodymyr Zakhovaiko",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.16.10",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.16.8",
+    "@babel/preset-env": "^7.16.8",
+    "babel-loader": "^8.2.3",
+    "p5": "^1.4.0",
+    "terser-webpack-plugin": "^5.3.0",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "dependencies": {
+    "serve": "^13.0.2"
+  }
+}
