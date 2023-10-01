@@ -1,65 +1,68 @@
-    const sec = document.querySelector('.sec');
-    const min = document.querySelector('.min');
-    const hour = document.querySelector('.hour');
-    const day = document.querySelector('.day');
-    const start = document.querySelector('.start');
-    const stop = document.querySelector('.stop');
-    const reset = document.querySelector('.reset');
-    const lap = document.querySelector('.lap');
-    const body = document.querySelector('body');
-    start.addEventListener('click', () => {
-        interval1 = setInterval(() => {
-            sec.value = parseInt(sec.value) + 1;
-            if (parseInt(sec.value) === 60) {
-                sec.value = 0;
-            }
-        }, 1000)
-        interval2 = setInterval(() => {
-            min.value = parseInt(min.value) + 1;
-            if (parseInt(min.value) === 60) {
-                min.value = 0;
-            }
-        }, 60000)
-        interval3 = setInterval(() => {
-            hour.value = parseInt(hour.value) + 1;
-            if (parseInt(hour.value) === 24) {
-                hour.value = 0;
-            }
-        }, 3600000)
-        interval4 = setInterval(() => {
-            day.value = parseInt(day.value) + 1;
-        }, 86400000)
-    })
-    stop.addEventListener('click', () => {
-        clearInterval(interval1);
-        clearInterval(interval2);
-        clearInterval(interval3);
-        clearInterval(interval4);
-    })
-    reset.addEventListener('click', () => {
-        clearInterval(interval1);
-        clearInterval(interval2);
-        clearInterval(interval3);
-        clearInterval(interval4);
-        sec.value = 0;
-        min.value = 0;
-        hour.value = 0;
-        day.value = 0;
-    })
-    lap.addEventListener('click', () => {
-        const result = document.createElement('div');
-        const resultDay = document.createElement('div');
-        const resultHour = document.createElement('div');
-        const resultMin = document.createElement('div');
-        const resultSec = document.createElement('div');
-        result.setAttribute('class', 'resultOfLap');
-        result.appendChild(resultDay);
-        result.appendChild(resultHour);
-        result.appendChild(resultMin);
-        result.appendChild(resultSec);
-        body.appendChild(result);
-        resultDay.innerHTML = day.value;
-        resultHour.innerHTML = hour.value;
-        resultMin.innerHTML = min.value;
-        resultSec.innerHTML = sec.value;
-    })
+// Selecting elements
+const sec = document.querySelector(".sec");
+const min = document.querySelector(".min");
+const hour = document.querySelector(".hour");
+const day = document.querySelector(".day");
+const startBtn = document.querySelector(".start");
+const stopBtn = document.querySelector(".stop");
+const resetBtn = document.querySelector(".reset");
+const lapBtn = document.querySelector(".lap-button"); // Corrected class name
+const lapsContainer = document.querySelector(".laps"); // Corrected class name
+
+let intervalId;
+let startTime = 0;
+
+// Function to update the timer display
+function updateTimerDisplay() {
+  const currentTime = Date.now();
+  const elapsedTime = Math.floor((currentTime - startTime) / 1000);
+
+  const seconds = elapsedTime % 60;
+  const minutes = Math.floor(elapsedTime / 60) % 60;
+  const hours = Math.floor(elapsedTime / 3600) % 24;
+  const days = Math.floor(elapsedTime / 86400);
+
+  sec.value = seconds;
+  min.value = minutes;
+  hour.value = hours;
+  day.value = days;
+}
+
+startBtn.addEventListener("click", () => {
+  if (!intervalId) {
+    startTime =
+      Date.now() -
+      (sec.value * 1000 +
+        min.value * 60000 +
+        hour.value * 3600000 +
+        day.value * 86400000);
+    intervalId = setInterval(updateTimerDisplay, 1000);
+  }
+});
+
+stopBtn.addEventListener("click", () => {
+  if (intervalId) {
+    clearInterval(intervalId);
+    intervalId = undefined;
+  }
+});
+
+resetBtn.addEventListener("click", () => {
+  clearInterval(intervalId);
+  intervalId = undefined;
+  sec.value = 0;
+  min.value = 0;
+  hour.value = 0;
+  day.value = 0;
+  startTime = 0;
+  lapsContainer.innerText = "";
+});
+
+lapBtn.addEventListener("click", () => {
+  if (intervalId) {
+    const lapResult = document.createElement("div");
+    lapResult.classList.add("lap-result");
+    lapResult.innerText = `${day.value}d ${hour.value}h ${min.value}m ${sec.value}s`;
+    lapsContainer.appendChild(lapResult);
+  }
+});
