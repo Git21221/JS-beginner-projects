@@ -11,6 +11,7 @@
 7) Make relevant changes and then follow this command<br>
 `git add .`<br>
 `git commit -m "message"`<br>
+`git pull`<br>
 `git push <your forked repo link>`
 8) Now come to our repo and make a pull request with issue link and proper screenshot.
 9) We will review and merge it soon.
