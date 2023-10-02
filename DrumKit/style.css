@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+}
+body {
+  background-color: rgb(56, 39, 39);
+  color: rgb(224, 205, 205);
+}
+nav {
+  display: flex;
+  padding: 20px;
+  background-color: rgb(75, 64, 64);
+  margin-bottom: 25px;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main div {
+  margin: auto auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+.key {
+  border: none;
+  width: 110px;
+  height: 100px;
+  background-color: rgb(75, 64, 64);
+  color: inherit;
+  transition: 0.3s;
+  border-radius: 12px;
+}
+.clicked {
+  scale: 1.1;
+  opacity: 0.8;
+}
