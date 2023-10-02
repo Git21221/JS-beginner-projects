@@ -1,0 +1,74 @@
+body 
+{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(45deg, #007BFF, #00BFFF);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+h1 
+{
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+.container 
+{
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input[type = "number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+input[type = "number"]:focus 
+{
+    outline: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #007BFF;
+}
+
+button 
+{
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+button:hover 
+{
+    transform: scale(1.05);
+}
+
+.transition 
+{
+    transition: all 0.3s ease;
+}
+
+#result 
+{
+    margin-top: 20px;
+    background-color:  #007BFF;
+    padding: 10px;
+    border-radius: 4px;
+}
