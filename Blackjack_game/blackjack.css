@@ -15,10 +15,24 @@ body {
     height: 90vh;
     background-color: #151515;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    flex-direction: column;
 }
-
+.rules{
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    font-weight: 500;
+    margin-bottom: 3rem;
+}
+.rules span {
+    margin: 1rem 0;
+}
+.rules div{
+    font-weight: 800;
+    font-size: 1.4rem;
+}
 .head {
     font-size: 40px;
     font-weight: bold;
