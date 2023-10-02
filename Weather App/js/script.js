@@ -1,27 +1,52 @@
-const API_key = "cf6dd317645d0aaf819fefd7a8db5bb3";
-const sbmt = document.querySelector('#searchbtn');
-const temp = document.querySelector('.temperature');
-const wind = document.querySelector('.wind');
-const vis = document.querySelector('.vis');
-let city_name;
-sbmt.addEventListener('click', () => {
-    city_name = document.querySelector('#cityname').value;
-    console.log(city_name);
-    const apiWeather = `https://api.weatherapi.com/v1/current.json?key=a4c2b1408e974194861181505232509&q=${city_name}&aqi=no`;
-    const weatherXhr = new XMLHttpRequest();
-    weatherXhr.open('GET', apiWeather);
-    weatherXhr.onreadystatechange = () => {
-        if (weatherXhr.readyState === 4) {
-            const apiInfo = JSON.parse(weatherXhr.responseText);
-            console.log(apiInfo);
-            console.log(typeof apiInfo.humidity);
-            console.log(apiInfo.current.wind_kph);
-            console.log(apiInfo.current.temp_c);
-            console.log(apiInfo.current.feelslike_c);
-            vis.innerText = `${apiInfo.current.humidity}`;
-            wind.innerText = `Speed (${apiInfo.current.wind_kph}) kmph`;
-            temp.innerText = `Temperature (${apiInfo.current.temp_c}) feels like (${apiInfo.current.feelslike_c})`;
-        }
-    }
-    weatherXhr.send();
-})
+let result = document.getElementById("result");
+let searchBtn = document.getElementById("search-btn");
+let cityRef = document.getElementById("city");
+//Function to fetch weather details from api and display them
+let getWeather = () => {
+  let cityValue = cityRef.value;
+  //If input field is empty
+  if (cityValue.length == 0) {
+    result.innerHTML = `<h3 class="msg">Please enter a city name</h3>`;
+  }
+  //If input field is NOT empty
+  else {
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=a6c7644ede7106b817420a8909b5a6e6&units=metric`;
+    //Clear the input field
+    cityRef.value = "";
+    fetch(url)
+      .then((resp) => resp.json())
+      //If city name is valid
+      .then((data) => {
+        console.log(data);
+        console.log(data.weather[0].icon);
+        console.log(data.weather[0].main);
+        console.log(data.weather[0].description);
+        console.log(data.name);
+        console.log(data.main.temp_min);
+        console.log(data.main.temp_max);
+        result.innerHTML = `
+        <h2>${data.name}</h2>
+        <h4 class="weather">${data.weather[0].main}</h4>
+        <h4 class="desc">${data.weather[0].description}</h4>
+        <img src="https://openweathermap.org/img/w/${data.weather[0].icon}.png">
+        <h1>${data.main.temp} &#176;</h1>
+        <div class="temp-container">
+            <div>
+                <h4 class="title">min</h4>
+                <h4 class="temp">${data.main.temp_min}&#176;</h4>
+            </div>
+            <div>
+                <h4 class="title">max</h4>
+                <h4 class="temp">${data.main.temp_max}&#176;</h4>
+            </div>
+        </div>
+        `;
+      })
+      //If city name is NOT valid
+      .catch(() => {
+        result.innerHTML = `<h3 class="msg">City not found</h3>`;
+      });
+  }
+};
+searchBtn.addEventListener("click", getWeather);
+window.addEventListener("load", getWeather);

@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
-<body>
-    <input type="text" name="cityname" id="cityname" placeholder="Enter your city name">
-    <input type="submit" name="search" id="searchbtn" value="Search">
-    <div class="weatherInfo">
-        <div class="temp">
-            <b>Temperature: </b><span class="temperature"></span>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="shape shape-1"></div>
+      <div class="shape shape-2"></div>
+      <div class="container">
+        <div class="search-container">
+          <input
+            type="text"
+            placeholder="Enter a city name"
+            id="city"
+            value="mumbai"
+          />
+          <button id="search-btn">Search</button>
         </div>
-        <div class="windinfo">
-            <b>Wind: </b> <span class="wind"></span>
-        </div>
-        <div class="visibility">
-            <b>Humidity: </b><span class="vis"></span>
-        </div>
+        <div id="result"></div>
+      </div>
     </div>
-</body>
-<script src="js/script.js">
-</script>
-
+    <!-- Script -->
+    <script src="./js/script.js"></script>
+  </body>
 </html>
