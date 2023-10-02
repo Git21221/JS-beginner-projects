@@ -1,0 +1,134 @@
+.card-front{
+    width: 30vw;
+    height: 35vh;
+    border-radius: 10px;
+    /* angle : 180deg; */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: relative;
+    left: 14vw;
+    top: 10vh;
+    background: linear-gradient(127.75deg, rgba(94, 144, 230, 1) 10.57%, rgba(99, 40, 192, 1) 30.11%,
+    rgba(234, 113, 103, 1) 70%, rgba(94, 144, 230, 1) 90.57%); 
+}
+.card :hover{
+    color: rgb(34, 183, 171);
+}
+.circle{
+    border:rgba(94, 144, 230, 1);
+    border-radius: 100px;
+    background-color: white;
+    width: 3vw;
+    height: 6vh;
+    position: relative;
+    top: 3vh;
+    left: 1.5vw;
+}
+.circle-next{
+    border:rgba(94, 144, 230, 1);
+    border-radius: 100px;
+    background-color:rgba(94, 144, 230, 1);
+    width: 1.2vw;
+    height: 2.4vh;
+    position: relative;
+    bottom: 1vh;
+    left: 5.5vw;
+}
+.card-back{
+    width: 30vw;
+    height: 35vh;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(106.8deg, #FFFFFF 0%, #D9D9D9 103.94%);
+    position: relative;
+    left: 20vw;
+    top: 18vh;
+}
+.black-strip{
+    width: 30vw;
+    background: rgba(0, 0, 0, 1);
+    height: 8vh;
+    position: relative;
+    top: 3vh;
+}
+.gray-strip{
+    width: 24vw;
+    background: rgba(173, 182, 191, 1);
+    height: 5.5vh;
+    position: relative;
+    top: 6vh;
+    margin-left: 2.9vw;
+    border-radius: 4px;
+}
+.line{
+    height: 1vh;
+    border-radius: 4px;
+    background: rgba(173, 182, 191, 1);
+}
+.line1{
+    position: relative;
+    width: 9vw;
+    top: 10vh;
+    margin-left: 5vw;
+}
+.line2{
+    position: relative;
+    width: 5vw;
+    top: 9vh;
+    margin-left: 15vw;
+}
+.line3{
+    position: relative;
+    width: 2vw;
+    top: 8vh;
+    margin-left: 22vw;
+}
+.line4{
+    position: relative;
+    width: 5vw;
+    top: 7vh;
+    margin-left: 5vw;
+}
+.line5{
+    position: relative;
+    width: 2vw;
+    top: 6vh;
+    margin-left: 12vw;
+}
+.line6{
+    position: relative;
+    width: 10vw;
+    top: 5vh;
+    margin-left: 15vw;
+}
+.card{
+    color: white;
+    text-transform: uppercase;
+}
+.card-number{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 13vh;
+    letter-spacing: 7px;
+    font-size: 20px;
+    font-weight: 500;
+}
+.name-date{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 16vh;
+    letter-spacing: 3px;
+    font-family: Roboto;
+    gap: 2vw;
+    margin-left: 0.6vw;
+    font-weight: 300;
+}
+.card-cvv{
+    display: flex;
+    justify-content: flex-end;
+    letter-spacing: 3px;
+    font-family: Roboto;
+    padding: 10px;
+    font-weight: 300;
+}
