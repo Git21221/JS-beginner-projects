@@ -1,32 +1,45 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Outfit', sans-serif;
 }
-html , body{
+
+html,
+body {
     height: 100%;
     width: 100%;
-    
+
 }
-.box{
+
+.title {
+    padding-left: 2rem;
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.box {
     background: rgb(0, 0, 0);
     height: 200px;
     width: 200px;
     margin: 50px;
     box-shadow: -2px -1px 26px 1px grey;
 }
-body{
+
+body {
+
     background: #000;
     color: white;
-    min-height: 100vh;
-    position: relative;
+    height: 100vh;
+    width: 100vw;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#full-panel{
+
+#full-panel {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -34,41 +47,65 @@ body{
     justify-content: center;
     width: fit-content;
 }
-#full-panel h1{
+
+#full-panel h1 {
     font-size: 50px;
     color: #fff;
     margin-bottom: 30px;
 }
 
-#main{
+#main {
     display: flex;
     align-items: center;
     justify-content: center;
     column-gap: 20px;
+    width: 100%;
+
+    flex-wrap: wrap;
+
 }
-.parameter-lable{
+
+.parameter-lable {
     display: flex;
     flex-direction: column;
+
 }
-.parameter{
+
+.parameter-content {
+    width: 100%;
+    padding: 0 2rem;
+}
+
+.parameter {
     /* padding: 15px; */
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
     max-height: 0;
+
     overflow: hidden;
     transition: all ease 0.8s;
 }
-.block{
+
+.parameter div {
+    margin: 0 1rem;
+}
+
+.block {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 0 3rem;
 }
-.block code{
+
+.block code {
     max-height: 0;
     overflow: hidden;
     transition: all ease 0.8s;
 }
-.lable{
+
+.lable {
     padding: 5px 10px;
     display: flex;
     justify-content: space-between;
@@ -76,21 +113,30 @@ body{
     border: 1px solid #fff;
     margin-bottom: 10px;
 }
-.color-width{
-    width: 100%;
-    cursor:crosshair;
+
+.color-width {
+    width: 20rem;
+    cursor: crosshair;
 }
-.lable-container{
+
+input {
+    width: 20rem;
+}
+
+.lable-container {
     border: 1px solid #fff;
     padding: 10px;
     margin-bottom: 10px;
 }
-.lable-container h2{
+
+.lable-container h2 {
     font-size: 16px;
 }
-.lable h2{
+
+.lable h2 {
     font-size: 22px;
 }
-.lable i:hover{
+
+.lable i:hover {
     cursor: pointer;
 }

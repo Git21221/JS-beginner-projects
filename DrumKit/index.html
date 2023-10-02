@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost&display=swap"
+      rel="stylesheet"
+    />
+    <title>Drum Kit</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Drum Kit</h1>
+    </nav>
+
+    <main>
+      <div>
+        <button data-key="81" class="key">BOOM ( Q )</button>
+        <button data-key="87" class="key">CLAP ( W )</button>
+        <button data-key="69" class="key">HIHAT ( E )</button>
+        <button data-key="65" class="key">KICK ( A )</button>
+        <button data-key="83" class="key">OPENHAT ( S )</button>
+        <button data-key="68" class="key">RIDE ( D )</button>
+        <button data-key="90" class="key">SNARE ( Z )</button>
+        <button data-key="88" class="key">TINK ( X )</button>
+        <button data-key="67" class="key">TOM ( C )</button>
+      </div>
+    </main>
+
+    <audio data-key="81" src="sounds/boom.wav"></audio>
+    <audio data-key="87" src="sounds/clap.wav"></audio>
+    <audio data-key="69" src="sounds/hihat.wav"></audio>
+    <audio data-key="65" src="sounds/kick.wav"></audio>
+    <audio data-key="83" src="sounds/openhat.wav"></audio>
+    <audio data-key="68" src="sounds/ride.wav"></audio>
+    <audio data-key="90" src="sounds/snare.wav"></audio>
+    <audio data-key="88" src="sounds/tink.wav"></audio>
+    <audio data-key="67" src="sounds/tom.wav"></audio>
+    <script src="main.js"></script>
+  </body>
+</html>
