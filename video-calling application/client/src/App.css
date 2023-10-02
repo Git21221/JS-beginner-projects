@@ -1,0 +1,66 @@
+video {
+  transform: rotateY(180deg);
+}
+.videoContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.video {
+  height: 300px;
+  width: 300px;
+  margin: 8px;
+  display: none;
+}
+.Myvideo {
+  height: 300px;
+  width: 300px;
+  margin: 8px;
+}
+/* body{
+    background-color: rgb(60, 4, 77)
+} */
+.form {
+  flex: 1;
+  margin-top: 100px;
+}
+.form > div {
+  display: flex;
+  flex-direction: column;
+}
+.form > div > input {
+  padding: 5px 8px;
+}
+.container {
+  flex: 1;
+}
+.InfoForm {
+  border: 5px solid #f1f1f1;
+}
+.room {
+  width: 100%;
+  padding: 16px 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.submitBtn{
+  background-color: #8ebf42;
+  color: white;
+  padding: 14px 0;
+  margin: 10px 0;
+  border: none;
+  cursor: grabbing;
+  width: 100%;
+}
+.submitBtn:hover {
+  opacity: 0.8;
+}
+.formcontainer {
+  text-align: left;
+  margin: 24px 50px 12px;
+}
+.cont {
+  padding: 16px 0;
+  text-align: left;
+}
