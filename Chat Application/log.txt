@@ -1,8 +1,0 @@
-[2023-07-18 10:50:57] : user samihan is joined the chat
-[2023-07-18 10:51:04] : user kalpesh is joined the chat
-[2023-07-18 10:51:13] : user kalpesh is joined the chat
-[2023-07-18 10:51:19] : user kalpesh disconnected !
-[2023-07-18 10:51:26] : user lokesh is joined the chat
-[2023-07-18 10:51:49] : user samihan disconnected !
-[2023-07-18 10:51:50] : user kalpesh disconnected !
-[2023-07-18 10:51:51] : user lokesh disconnected !
