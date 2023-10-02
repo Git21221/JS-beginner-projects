@@ -22,23 +22,23 @@ let parameterLable = document.querySelector(".lable-container h2 i");
 let codeLable = document.querySelector(".lable i");
 let parameterBox = false;
 let codeBox = false;
-parameterLable.addEventListener('click',function(){
-    if(parameterBox===false){
+parameterLable.addEventListener('click', function () {
+    if (parameterBox === false) {
         document.querySelector(".parameter").style.maxHeight = 800 + "px";
         parameterBox = true;
-    }else{
+    } else {
         document.querySelector(".parameter").style.maxHeight = 0 + "px";
-        parameterBox= false;
+        parameterBox = false;
     }
-    
+
 })
-codeLable.addEventListener('click',function(){
-    if(codeBox===false){
+codeLable.addEventListener('click', function () {
+    if (codeBox === false) {
         document.querySelector("code").style.maxHeight = 800 + "px";
         codeBox = true;
-    }else{
+    } else {
         document.querySelector("code").style.maxHeight = 0 + "px";
-        codeBox= false;
+        codeBox = false;
     }
 })
 bxrad.addEventListener('input', () => {
