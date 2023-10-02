@@ -11,12 +11,13 @@
 
 body {
     height: 100vh;
-    background-color: #3AC4D7;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
 .wrapper {
@@ -27,11 +28,18 @@ body {
     height: 52%;
     width: 45%;
     border-radius: 20px;
-    color: #7B7B7B;
+    
     padding: 5px;
     filter: drop-shadow(6px 4px rgba(18, 18, 18, 0.132));
 }
+@media screen and (max-width: 368px) {
+    .wrapper {
+        width: 95%;
+        /* Adjust for larger screens */
+    }
 
+
+}
 .heading {
     color: #151515;
     font-size: 35px;
@@ -54,6 +62,7 @@ button {
     border-radius: 10px;
     border: none;
     font-size: 18px;
+    transition: all 0.5s;
     cursor: pointer;
 }
 
@@ -62,7 +71,29 @@ button {
     height: 3px;
     background: #000;
 }
+button:active {
+    transform: scale(1.2);
+}
 
+.back1 {
+    background-color: aqua;
+    color: blueviolet;
+}
+
+.back2 {
+    background-color: rgb(254, 39, 39);
+    color: rgb(6, 6, 6);
+}
+
+.back3 {
+    background-color: rgb(39, 182, 254);
+    color: rgb(237, 254, 5);
+}
+
+.back4 {
+    background-color: rgb(8, 253, 114);
+    color: rgb(10, 10, 10);
+}
 
 
 
