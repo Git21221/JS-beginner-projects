@@ -8,6 +8,14 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/*navbar-text-item styling*/
+.display-7{
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+
 a, a:hover, a:link, a:visited, a:active{
     text-decoration: none;
     color: var(--white-color-lv5);
@@ -22,6 +30,8 @@ body {
     row-gap: 30px;
     height: 100vh;
     background: linear-gradient(135deg, rgb(212, 0, 240), rgb(0, 101, 216));
+    
+    background-repeat: no-repeat;
     color: var(--white-color-lv5);
 }
 
