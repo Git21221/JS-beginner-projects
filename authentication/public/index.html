@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="left-section">
+      <h2>To-Do List</h2>
+      <ul id="todoList"></ul>
+    </div>
+    <div class="right-section">
+      <form id="taskForm">
+        <textarea id="taskInput" placeholder="Enter your task here..."></textarea>
+        <div class="custom-file-input">
+          <label for="uploadFileInput">Upload Image</label>
+          <input type="file" id="uploadFileInput" accept="image/*">
+          <span id="selectedFileName"></span> 
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
