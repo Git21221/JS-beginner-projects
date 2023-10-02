@@ -6,8 +6,18 @@
 
 # How can I contribute in `JS beginner Project`?
 
-1. first `star` our repo. ![image](https://github.com/Git21221/IBMSkillsBuild/assets/101005577/74657b1d-b3c5-45fd-861c-344144259881)
-2. `fork` our repo by clicking fork button. ![image](https://github.com/Git21221/IBMSkillsBuild/assets/101005577/1312a52c-8959-489d-88e9-3d9addea9dd8)
+<div align-items: center;">
+<ul style="list-style-type: none; padding-left: 26px; margin: 0;">
+  <li>
+    <span style="vertical-align:middle">1. first `star` our repo. &nbsp</span>
+    <img src="star.png" style="vertical-align: middle;"/>
+  </li>
+  <li style="padding-top: 5px;">
+    <span style="vertical-align:middle">2. `fork` our repo by clicking fork button. &nbsp</span>
+    <img src="fork.png" style="vertical-align: middle;"/>
+  </li>
+</ul>
+
 3. Now open local folder and then open cmd, paste `git clone https://github.com/Git21221/JS-beginner-projects.git` this command.
 4. Now JS beginner Project is clonned in your local folder.
 5. Create issue with proper details of issue or new features.
@@ -20,6 +30,9 @@
 8. Now come to our repo and make a pull request with issue link and proper screenshot.
 9. We will review and merge it soon.
 10. Your participation is made with us.
+</div>
+
+
 
 # Contributors
 
