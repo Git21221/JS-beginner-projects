@@ -9,13 +9,14 @@
     box-sizing: border-box;
 }
 
-body{
-    width:100vw;
-    overflow-y: hidden;
+body {
+    width: 100vw;
+    overflow-x: hidden;
     font-family: 'Kanit', sans-serif;
     font-family: 'Libre Franklin', sans-serif;
     font-family: 'Work Sans', sans-serif;
 }
+
 .gamesAndProjects {
     display: flex;
     flex-wrap: wrap;
@@ -31,43 +32,49 @@ body{
 /* NEW HOMEPAGE */
 
 
-.header{
-    width:100%;
-    height:8vh;
+.header {
+    width: 100%;
+    position: fixed;
+    height: 80px;
     background-color: rgb(255, 255, 255);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-inline:2rem;
+    padding-inline: 2rem;
+    z-index: 99999;
 }
-.header a{
+
+.header a {
     text-decoration: none;
-    width:8rem;
-    height:2.5rem;
+    width: 8rem;
+    height: 2.5rem;
     border: none;
     border-radius: 0.2rem;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap:5%;
+    gap: 5%;
     background-color: #1E40AF;
-    color:white;
+    color: white;
 }
-.header a:hover{
+
+.header a:hover {
     transform: scale(1.05);
     transition: all 0.3s ease;
 }
-.hero-container{
-    min-height: 92vh;
-    width:100%;
+
+.hero-container {
+    padding: 100px 0;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #F1F5F9;
 }
-.hero-section{
-    width:90%;
+
+.hero-section {
+    width: 90%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -75,17 +82,19 @@ body{
     gap: 5rem;
     text-align: center;
 }
-.project-parent{
-    width:100%;
+
+.project-parent {
+    width: 100%;
     /* min-height:70vh; */
     display: flex;
     justify-content: center;
-    gap:2rem;
+    gap: 2rem;
     flex-wrap: wrap;
 }
-.project-parent a{
-    width:100%;
-    height:100%;
+
+.project-parent a {
+    width: 100%;
+    height: 100%;
     text-decoration: none;
     color: white;
     text-align: center;
@@ -93,9 +102,10 @@ body{
     align-items: center;
     justify-content: center;
 }
-.project-child{
+
+.project-child {
     min-width: 8rem;
-    height:3rem;
+    height: 3rem;
     background-color: rgb(255, 255, 255);
     border-radius: 0.4rem;
     padding-inline: 1rem;
@@ -103,18 +113,20 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    color:#1E40AF;
+    color: #1E40AF;
     border: 3px solid #1E40AF;
 }
-.project-child a{
-    width:100%;
-    height:100%;
-    text-decoration:none;
+
+.project-child a {
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
     color: #1E40AF;
     font-size: 1.2rem;
     font-weight: 600;
 }
-.project-child:hover{
+
+.project-child:hover {
     transform: scale(1.05);
     transition: all 0.3s ease;
 }
