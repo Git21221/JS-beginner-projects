@@ -1,0 +1,156 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+.container {
+  display: flex;
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+.left-section,
+.right-section {
+  flex: 1;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.left-section {
+  margin-right: 20px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+li.completed {
+  background-color: #e6e6e6;
+  text-decoration: line-through;
+}
+
+li .tick-button,
+li .remove-button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #dc3545;
+  padding: 5px;
+  border-radius: 50%;
+  margin-left: 10px;
+  transition: color 0.2s ease;
+}
+
+li .remove-button {
+  margin-left: 5px;
+}
+
+li .tick-button:hover,
+li .remove-button:hover {
+  color: #ff0000; 
+}
+
+#taskForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#taskInput {
+  flex: 1;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 100%;
+}
+
+#taskInput:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+#taskForm button {
+  padding: 8px 15px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#taskForm button:hover {
+  background-color: #0056b3; 
+}
+
+.custom-file-input {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.custom-file-input input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.custom-file-input label {
+  padding: 8px 15px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.custom-file-input label:hover {
+  background-color: #0056b3; 
+}
+
+#selectedFileName {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Styling for the task image */
+.task-image {
+  margin-left: 20px;
+  object-fit: cover;
+  border-radius: 5px;
+  max-width: 100px;
+  max-height: 100px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
