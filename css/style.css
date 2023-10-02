@@ -1,4 +1,4 @@
-:root {
+/* :root {
     --white-color-lv5: #dfdfdf;
     --dark-color-lv5: #212121;
 }
@@ -50,4 +50,66 @@ body {
     column-gap: 20px;
     align-items: center;
     justify-content: center;
+} */
+:root {
+    --white-color-lv5: #dfdfdf;
+    --dark-color-lv5: #212121;
+    --primary-color: rgb(212, 0, 240);
+    --secondary-color: rgb(0, 101, 216);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a, a:hover, a:link, a:visited, a:active {
+    text-decoration: none;
+    color: var(--white-color-lv5);
+}
+
+body {
+    padding: 20px;
+    font-family: 'Outfit', sans-serif;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white-color-lv5);
+    text-align: center;
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.projectLink {
+    text-align: center;
+    text-decoration: none;
+    margin: 10px;
+}
+
+.projectCard {
+    opacity: 1;
+  transform: translate3d(0, 50px, 0);
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: background 0.3s ease-in-out;
+    margin-bottom: auto;
+}
+.projectCard.in-view {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  } 
+.projectsName {
+    font-size: 1.5rem;
+}
+
+.projectCard:hover {
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
 }
