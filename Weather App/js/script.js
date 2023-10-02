@@ -1,7 +1,6 @@
 let result = document.getElementById("result");
 let searchBtn = document.getElementById("search-btn");
 let cityRef = document.getElementById("city");
-let key = "a6c7644ede7106b817420a8909b5a6e6";
 //Function to fetch weather details from api and display them
 let getWeather = () => {
   let cityValue = cityRef.value;
@@ -11,7 +10,7 @@ let getWeather = () => {
   }
   //If input field is NOT empty
   else {
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=${key}&units=metric`;
+    let url = `https://api.openweathermap.org/data/2.5/weather?q=${cityValue}&appid=a6c7644ede7106b817420a8909b5a6e6&units=metric`;
     //Clear the input field
     cityRef.value = "";
     fetch(url)
