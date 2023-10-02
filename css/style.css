@@ -11,6 +11,7 @@
 
 body{
     width:100vw;
+    overflow-y: hidden;
     font-family: 'Kanit', sans-serif;
     font-family: 'Libre Franklin', sans-serif;
     font-family: 'Work Sans', sans-serif;
