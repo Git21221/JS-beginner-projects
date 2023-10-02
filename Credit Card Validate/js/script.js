@@ -32,3 +32,14 @@ function validateCreditCard() {
         resultElement.className = 'invalid';
     }
 }
+
+
+function toggleDarkMode() {
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+}
+
+const toggleDarkModeButton = document.getElementById('toggleDarkMode');
+toggleDarkModeButton.addEventListener('click', toggleDarkMode);
+
+
