@@ -1,0 +1,25 @@
+<!----BLACKJACK GAME : RULES-1)FIRST YOU WILL PICK 2 CARDS IF ITS SUM IS 21 YOU GOT BLACKJACK
+                             2)IF SUM IS LESS THAN 21 YOU DRAW ANOTHER CARD UNTIL YOU GET 21 OR MORE THAN 21
+                             3)IF SUM IS GREATER THAN 21 YOU LOSE-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="blackjack.css">
+</head>
+<body>
+    <div class="container">
+        <p class="head">Blackjack</p>
+        <p class="message" id="mess-el">Want to play a round</p>
+        <p class="card" id="card-el">Cards :</p>
+        <p class="sum" id="sum-el">Sum:</p>
+        <button class="start " onclick="startgame()">START GAME</button>
+        <button class="new game" onclick="drawcard()">NEW CARD</button>
+
+    </div>
+    <script src="blackjack.js"></script>
+</body>
+</html>

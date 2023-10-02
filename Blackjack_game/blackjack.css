@@ -1,0 +1,61 @@
+.container {
+    background-image: radial-gradient(rgb(18, 182, 18), green);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 420px;
+    height: 420px;
+    border-radius: 6px;
+
+}
+
+body {
+    width: 97vw;
+    height: 90vh;
+    background-color: #151515;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.head {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(231, 198, 7);
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: -10px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.message,
+.card,
+.sum {
+    font-size: 22px;
+
+    font-weight: bold;
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+    width: 120px;
+    height: 30px;
+    border-radius: 4px;
+    margin-bottom: 2%;
+    border: none;
+    background-color: rgb(231, 198, 7);
+    color: rgb(21, 20, 20);
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button:active {
+    background-color: rgb(243, 215, 59);
+}
