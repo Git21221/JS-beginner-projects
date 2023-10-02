@@ -3,6 +3,8 @@ const sbmt = document.querySelector('#searchbtn');
 const temp = document.querySelector('.temperature');
 const wind = document.querySelector('.wind');
 const vis = document.querySelector('.vis');
+const feels=document.querySelector('.feels');
+const body=document.querySelector('body');
 let city_name;
 sbmt.addEventListener('click', () => {
     city_name = document.querySelector('#cityname').value;
@@ -19,8 +21,31 @@ sbmt.addEventListener('click', () => {
             console.log(apiInfo.current.temp_c);
             console.log(apiInfo.current.feelslike_c);
             vis.innerText = `${apiInfo.current.humidity}`;
-            wind.innerText = `Speed (${apiInfo.current.wind_kph}) kmph`;
-            temp.innerText = `Temperature (${apiInfo.current.temp_c}) feels like (${apiInfo.current.feelslike_c})`;
+            wind.innerText = `${apiInfo.current.wind_kph}`;
+            temp.innerText = `${apiInfo.current.temp_c} ` ;
+            feels.innerText=`${apiInfo.current.feelslike_c} `;
+            switch (apiInfo.current.condition.text) {
+                case 'Partly cloudy':
+                    document.body.style.backgroundImage = 'url("/Weather App/Images/PartlyCloudy.jpg")';
+                    break;
+                case 'Clear':
+                    document.body.style.backgroundImage = 'url("/Weather App/Images/clear.jpg")';
+                    break;
+                case 'Rain':
+                    document.body.style.backgroundImage = 'url("/Weather App/Images/rain.jpg")';
+                    break;
+                case 'Mist':
+                    document.body.style.backgroundImage = 'url("/Weather App/Images/mist.jpg")';
+                    break;
+                case 'Snow':
+                    document.body.style.backgroundImage = 'url("/Weather App/Images/snow.jpg")';
+                    break;
+                    default:
+                        document.body.style.backgroundImage = 'url("/Weather App/Images/PartlyCloudy.jpg")';
+                break;
+               
+            }
+            
         }
     }
     weatherXhr.send();

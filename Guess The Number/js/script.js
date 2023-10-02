@@ -32,7 +32,7 @@ function validateGuess(guessNumber) {
 }
 function checkGuess(guessNumber) {
     if (guessNumber === randomNumber) {
-        displayMessege("You guessed right");
+        displayMessege("You guessed right 🎉");
         endGame();
     }
     else if (guessNumber < randomNumber) displayMessege(`Number is too low`);
@@ -69,6 +69,7 @@ function newGame() {
         code.innerHTML = 10;
         userValue.removeAttribute('disabled');
         startOver.removeChild(p);
+        loh.textContent="";
         playGame = true;
     });
 }

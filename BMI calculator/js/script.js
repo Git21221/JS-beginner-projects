@@ -14,3 +14,16 @@ form.addEventListener('submit', (e) => {
         if(bmi > 24.9) result.innerHTML = `Motu and BMI ${bmi}`;
     }
 })
+
+const toggleDarkModeButton = document.getElementById("toggleDarkMode");
+const stylesheet = document.getElementById("stylesheet");
+
+toggleDarkModeButton.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    // Toggle the stylesheet between light and dark modes
+    if (stylesheet.getAttribute("href") === "css/style.css") {
+        stylesheet.setAttribute("href", "css/dark-style.css");
+    } else {
+        stylesheet.setAttribute("href", "css/style.css");
+    }
+});

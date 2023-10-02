@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ Music Remix By Aryan Inguz</title>
+    <style>
+        .flex{
+            display: flex;
+            width: 95vw;
+            height: 95vh;
+            flex: 1;
+            flex-wrap: wrap;        
+           justify-content: center;
+           align-items: center;
+        }
+        .f1{
+            width: 155px;
+            height: 190px;
+            background-color: aliceblue;
+            color: crimson;
+            margin-right:25px;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            font-size: xx-large;
+            box-shadow: 5px 5px 3px rgb(119, 87, 159);
+        }
+        .f1:hover{
+            transition: ease-in-out .1s;
+            height: 210px;
+            width: 175px;
+        }
+        .fb{
+    justify-self: center;
+    width: 180px;
+    height: 50px;
+    border-radius: 9px;
+    box-shadow: 4px 4px 2px rgb(255, 0, 0);
+    transition: 0.7s ease;
+}
+
+.fb:hover{
+    background-color: #f10f0f;
+    transition: ease .3s;
+    color: white;
+    box-shadow: 4px 4px 2px rgb(255, 255, 255);
+
+}
+    </style>
+</head>
+<body style=" background-color: rgba(51, 51, 193, 0.452);">
+    <h1 style="font-size: xx-large; font-family:sans-serif;font-weight: bolder;color: aliceblue;   text-align: center; margin-top: 50px;">
+    DJ Music Remix
+    </h1>
+    <p style="font-family:'Courier New', Courier, monospace;font-weight: bolder;color: aliceblue;   text-align: center;">Remix multiple songs as and light up your vibe</p>
+    <div class="center" style="display: flex; justify-content: center;">
+        <button class="fb" onclick="window.location.reload(true)">Stop Playing</button>
+
+    </div>
+    <div class="flex">
+<br>
+<button class="f1" style="background: url('https://cdn.pixabay.com/audio/2022/07/04/19-16-22-613_200x200.jpg');background-size: cover;background-position:center;color: transparent;">
+a
+</button>
+<button class="f1"  style="background: url('https://cdn.pixabay.com/audio/2022/04/04/06-26-04-563_200x200.jpg');background-size: cover;background-position:center;color: transparent;">
+    b
+    </button>
+    <button class="f1"  style="background: url('https://cdn.pixabay.com/audio/2023/03/22/14-41-54-422_200x200.png');background-size: cover;background-position:center;color: transparent;">
+        c
+        </button>
+        <button class="f1"  style="background: url('https://cdn.pixabay.com/audio/2022/11/11/22-14-54-824_200x200.jpg');background-size: cover;background-position:center;color: transparent;">
+            d
+            </button>
+            <button class="f1"  style="background: url('https://cdn.pixabay.com/audio/2022/04/12/08-25-21-876_200x200.jpg');background-size: cover;background-position:center;color: transparent;">
+                e
+                </button>
+                <button class="f1"   style="background: url('https://cdn.pixabay.com/audio/2022/06/16/20-57-31-74_200x200.png');background-size: cover;background-position:center;color: transparent;">
+                    f
+                    </button>
+                    </div>
+<script>
+
+
+    var i =0
+    var length = document.querySelectorAll('.f1').length; // using class .f1 as queryselector we can use tagname or id here aswell
+    var song
+
+
+        for(i=0;i<length;i++){
+        document.getElementsByClassName('f1')[i].addEventListener('click',function(){   //don't define function name here just write function
+        let x = this.innerText  //don't use innerhtml here as address will become wrong 
+        let string = 'music/'+x+'.mp3'
+        console.log(string)
+        var song = new Audio(string)
+        song.play()
+        })
+    }
+    
+
+
+    
+</script>
+</body>
+</html>

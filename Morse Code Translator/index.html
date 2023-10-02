@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0">
+	<title>Morse Code Converter</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div class="container">
+		<h1 class="title">Morse Code Translator</h1>
+		<div class="input-container">
+			<label class="label">Text to Morse Code:</label>
+			<textarea class="input"
+				id="textToMorse" rows="4"></textarea>
+			<button
+				onclick="handleTextToMorseTranslate()"
+					class="btn">Translate</button>
+			<p class="result">Translation:
+				<span id="textToMorseOutput"></span>
+				<button class="btn"
+					onclick=
+						"copyTextToMorseOutput()">Copy</button>
+			</p>
+			<p class="success-message"
+			id="textToMorseSuccessMessage"></p>
+		</div>
+		<div class="input-container">
+			<label class="label">
+			Morse Code to Text:
+			</label>
+			<textarea class="input"
+					id="morseToText" rows="4">
+			</textarea>
+			<button onclick="handleMorseToTextTranslate()"
+				class="btn">Translate
+			</button>
+			<p class="result">Translation:
+				<span id="morseToTextOutput"></span>
+				<button class="btn"
+						onclick="copyMorseToTextOutput()">Copy
+				</button>
+			</p>
+			<p class="success-message"
+			id="morseToTextSuccessMessage">
+			</p>
+		</div>
+	</div>
+	<script src="script.js"> </script>
+</body>
+
+</html>

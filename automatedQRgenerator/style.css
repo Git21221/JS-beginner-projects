@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: black;
+}
+.wrap {
+  height: 260px;
+  max-width: 410px;
+  background: white;
+  padding: 16px 25px 0;
+  border-radius: 1rem;
+  transition: height 0.2s ease;
+}
+.wrap.active {
+  height: 530px;
+}
+.wrap h1 {
+  font-size: 21px;
+  font-weight: 500;
+  /* padding: 1.2rem; */
+  /* margin: 1rem; */
+}
+.wrap header p {
+  margin-top: 5px;
+  color: #474747;
+  font-size: 16px;
+  text-transform: lowercase;
+}
+.wrap .form {
+  margin: 20px 0 25px;
+}
+.wrap :where(input, button) {
+  width: 100%;
+  height: 55px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+.form input {
+  font-size: 16px;
+  padding: 0 17px;
+  border: 1px solid #999;
+}
+.form button {
+  margin-top: 20px;
+  color: white;
+  background: black;
+  font-size: 17px;
+}
+.form button:hover {
+  cursor: pointer;
+  color: #3498db;
+  background: white;
+}
+.wrap .qr-code {
+  display: flex;
+  padding: 33px 0;
+  opacity: 0;
+  pointer-events: none;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+}
+.wrap.active .qr-code {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.5s 0.5s ease;
+}
+.wrap .qr-code img {
+  height: 12rem;
+}

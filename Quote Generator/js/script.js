@@ -23,9 +23,22 @@ function hideLoader() {
 
 // Example usage: Call showLoader() before an asynchronous task, and hideLoader() after the task is completed.
 
+const body = document.querySelector('.main');
+const arr = ["back1", "back2", "back3", "back4", "back1"]
+let prev = 0;
+body.classList.add(arr[prev]);
 
 async function quotes() {
     showLoader()
+    body.classList.remove(arr[prev]);
+    body.classList.add(arr[prev + 1]);
+    if (prev < 3) {
+        prev++;
+
+    }
+    else {
+        prev = 0;
+    }
     let quotes = await fetch("https://api.quotable.io/random")
     let data = await quotes.json();
 

@@ -61,3 +61,38 @@ button:hover{
     flex-direction: column;
     row-gap: 10px;
 }
+
+
+/* Light Mode */
+:root {
+    --background-color: #dfdfdfab;
+    --text-color: rgb(58, 58, 58);
+    --button-background: #bebebeab;
+}
+
+
+.dark-mode {
+    --background-color: #333;
+    --text-color: white;
+    --button-background: #444;
+}
+
+body {
+    
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+button {
+    
+    background: var(--button-background);
+}
+
+.dark-mode body {
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+.dark-mode button {
+    background: white;
+}
