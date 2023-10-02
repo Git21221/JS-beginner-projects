@@ -26,3 +26,8 @@
 <a href="https://github.com/Git21221/JS-beginner-projects/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=Git21221/JS-beginner-projects" />
 </a>
+
+# Forks
+
+[![Forkers repo roster for @sadanandpai/frontend-mini-challenges](https://reporoster.com/forks/Git21221/JS-beginner-projects)](https://github.com/Git21221/JS-beginner-projects/network/members)
+
