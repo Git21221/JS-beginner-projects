@@ -16,6 +16,7 @@
 }
 
 
+
 a, a:hover, a:link, a:visited, a:active{
     text-decoration: none;
     color: var(--white-color-lv5);
@@ -28,10 +29,10 @@ body {
     align-items: center;
     flex-direction: column;
     row-gap: 30px;
-    height: 100vh;
+    /*changed background height*/
+    height: 100%;
+    width: 100%;
     background: linear-gradient(135deg, rgb(212, 0, 240), rgb(0, 101, 216));
-    
-    background-repeat: no-repeat;
     color: var(--white-color-lv5);
 }
 
@@ -46,7 +47,7 @@ body {
     transition: 0.3s ease-in-out;
 }
 .projectsName:hover {
-    background: rgba(255, 255, 255, 0.295);
+    background: rgba(80, 75, 75, 0.295);
     cursor: pointer;
 }
 
