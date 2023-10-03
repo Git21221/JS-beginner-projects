@@ -1,0 +1,122 @@
+body 
+{
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: linear-gradient(45deg, #007BFF, #00BFFF);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+h1 
+{
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+.container 
+{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.note-form 
+{
+    margin-bottom: 20px;
+}
+
+input[type = "text"],
+textarea 
+{
+    width: 95%;
+    padding: 10px;
+    margin: 5px 0;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+input[type = "text"]:focus,
+textarea:focus 
+{
+    outline: none;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border: 2px solid #007BFF;
+}
+
+button 
+{
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover 
+{
+    transform: scale(1.05);
+    background-color: #0056b3; 
+}
+
+.note-list 
+{
+    text-align: center;
+}
+
+.note 
+{
+    background-color: lightcyan;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.note h2,
+.note p 
+{
+    color: #333;
+}
+
+.note-actions 
+{
+    display: flex;
+    gap: 10px;
+}
+
+.note:hover 
+{
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.delete-button 
+{
+    background-color: #ff4f42;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.delete-button:hover 
+{
+    transform: scale(1.1); 
+    background-color: #ff1a12; 
+}
