@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function generatePassword() {
         const length = parseInt(passwordLengthInput.value);
+        if(!length) {
+            alert("Please enter a valid password length.");
+            return;
+        }
         const includeUppercase = includeUppercaseCheckbox.checked;
         const includeLowercase = includeLowercaseCheckbox.checked;
         const includeNumbers = includeNumbersCheckbox.checked;
