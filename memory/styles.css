@@ -1,0 +1,75 @@
+:root {
+  --shadow: rgba(240, 46, 170, 0.4) 0px -23px 25px 0px inset,
+    rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+    rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px,
+    rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+    rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+body {
+  background: url("images/diamond.jpg");
+  background-repeat: no-repeat;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  height: 23rem;
+  width: 28rem;
+  gap: 1rem;
+  border-radius: 4rem;
+}
+
+.container img {
+  box-shadow: rgba(240, 46, 170, 0.4) -5px 5px,
+    rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px,
+    rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+  border-radius: 1rem;
+}
+
+.container h3 {
+  font-size: 32px;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.notification{
+  padding: 1rem;
+}
+
+li {
+  list-style: none;
+  position: absolute;
+  top: 7rem;
+  left: 15rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+}
+
+@media screen and (max-width: 720px) {
+  .grid {
+    width: 22rem;
+  }
+  .notification{
+    padding: 0;
+  }
+  li{
+    top: 5rem;
+    left: 30rem;
+  }
+}
