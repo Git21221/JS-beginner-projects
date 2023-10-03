@@ -31,7 +31,7 @@ body {
     flex-direction: column;
     row-gap: 30px;
     /*changed background height*/
-    height: 100vh;
+    height: 200vh;
     
     background: linear-gradient(135deg, rgb(212, 0, 240), rgb(0, 101, 216));
     color: var(--white-color-lv5);
