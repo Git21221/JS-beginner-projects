@@ -1,0 +1,92 @@
+/* gti.css */
+
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set a base font size for better responsiveness */
+html {
+    font-size: 62.5%;
+}
+
+/* Apply background and text styles */
+body {
+    background-image: url("forest.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto';
+    /* Added Google Font */
+}
+
+/* Header styles */
+.heading {
+    width: 100vw;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(5, 5, 66,0);
+    margin-top: 20vh;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 5rem;
+}
+
+/* Game container styles */
+.main {
+    width: 80rem;
+    /* Increased width */
+    height: 20rem;
+    /* Increased height */
+    margin-top: 12vh;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(5, 5, 66);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Image grid styles */
+.cImage {
+    width: 16rem;
+    height: 16rem;
+    cursor: pointer;
+    margin: 1rem;
+    border-radius: 50%;
+    transition: transform 0.2s ease-in-out;
+}
+
+.cImage:hover {
+    transform: scale(1.1);
+}
+
+/* Play again button styles */
+.playagain {
+    width: 25rem;
+    /* Increased width */
+    padding: 1.5rem 2rem;
+    /* Increased padding */
+    margin-right: auto;
+    margin-left: auto;
+    background-color: rgb(5, 5, 66);
+    margin-top: 2rem;
+    /* Increased top margin */
+    font-size: 2rem;
+    display: flex;
+    color:white;
+    border-radius:4px;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.playagain:hover {
+    background-color: #007bff;
+}

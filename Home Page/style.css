@@ -1,0 +1,64 @@
+
+body, h1 {
+    margin: 0;
+    padding: 0;
+ 
+}
+body { 
+     font-family: Arial, sans-serif;
+     background:url("i1.jpg");
+     background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; }
+
+   
+
+header {
+    background-color: #115794;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.project-label {
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+
+.blue-label {
+    background-color: #0074D9;
+    color: rgb(247, 246, 246);
+}
+
+.red-label {
+    background-color: #ad712c;
+    color: white;
+}
+
+.green-label {
+    background-color: #3CB371;
+    color: white;
+}
+
+
+.project-label:hover {
+    background-color: #7e3434; 
+}

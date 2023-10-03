@@ -6,6 +6,8 @@
 
 
 const clock = document.querySelector(".clock");
+const day = document.querySelector(".day");
+
 
 function updateClock() {
     let date = new Date();
@@ -18,6 +20,8 @@ function updateClock() {
     const time12Hour = date.toLocaleTimeString(undefined, options12Hour);
 
     clock.innerHTML = ` ${time24Hour}<br>${time12Hour}`;
+    day.innerHTML = ` ${date}`;
+    
 }
 
 setInterval(updateClock, 1000);

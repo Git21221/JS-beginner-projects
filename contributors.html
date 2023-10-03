@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Beginner Projects</title>
+    <link rel="stylesheet" href="css/style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <link rel="shortcut icon" href="js.png" type="image/x-icon" />
+
+
+ 
+  
+  </head>
+  <body>
+    <!--navigation section-->
+    <div class="container">
+        <div class="row mt-4">
+          <div class="col col-lg-12 col-xs-3"> 
+            <!-- Added a Navbar wrapper with Bootstrap Navbar classes -->
+            <nav class="navbar navbar-expand-md navbar-light">
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <!-- Collapsible content below -->
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs display-7 d-flex flex-sm-column flex-md-row justify-content-evenly w-100 text-uppercase" id="myTab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html" >projects</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="contributors.html" class="nav-link" data-bs-toggle="tab">contributors</a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://github.com/Git21221/JS-beginner-projects" class="nav-link">github</a>
+                  </li>
+                </ul>
+              </div>
+              <!-- Heading to appear below the navbar-toggler on medium screens and above -->
+              <div class="d-md-none text-center mt-3">
+                <h1 class="text-uppercase"> <span class="badge bg-primary">small javascript projects</span> </h1>
+              </div>
+            </nav>
+            <!-- Heading to appear alongside the navbar-toggler on small screens -->
+            <div class="d-none d-md-inline ml-md-2 text-center text-md-left">
+              <h1 class="text-uppercase"> <span class="badge bg-primary">small javascript projects</span> </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    
+      <h2 class="text-center mt-4"><span class="badge bg-success text-uppercase mb-2">Contributors</span> </h2>
+      <div class="container mt-2">
+       
+        <div class="row">
+            <div class="col-12">
+                <ul id="contributors-list" class="list-inline text-center">
+                  
+                </ul>
+            </div>
+        </div>
+    </div>  
+
+
+
+
+
+ <script>
+    // Your GitHub repository information
+    const repoOwner = 'Git21221';
+    const repoName = 'JS-beginner-projects';
+
+    // Fetch contributors from GitHub API
+    fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contributors`)
+        .then(response => response.json())
+        .then(contributors => {
+            const contributorsList = document.getElementById('contributors-list');
+
+            contributors.forEach(contributor => {
+                const listItem = document.createElement('li');
+                listItem.classList.add('d-inline-block', 'mr-2', 'mb-2');
+
+                const badge = document.createElement('span');
+                badge.classList.add('badge', 'bg-dark','m-2');
+                badge.innerHTML = `
+               <a href="${contributor.html_url}"  target="_blank">
+               <img src="${contributor.avatar_url}" alt="${contributor.login}" width="50">
+               <span style="margin-left: 10px;">${contributor.login}</span>
+               </a>
+                `;
+
+                listItem.appendChild(badge);
+                contributorsList.appendChild(listItem);
+            });
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
+
+
+
+
+    
+
+  
+  </body>
