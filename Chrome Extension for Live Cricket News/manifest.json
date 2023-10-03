@@ -1,0 +1,11 @@
+{
+    "name":"Arpcoder's Extension",
+    "version":"1.0.0",
+    "description":"Cricket Updates",
+    "manifest_version":3,
+    "author":"Arpna",
+    "action":{
+        "default_popup":"index.html",
+        "default_title":"Chrome Extension"
+    }
+}
