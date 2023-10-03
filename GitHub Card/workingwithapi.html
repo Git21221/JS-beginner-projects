@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card using API</title>
+    <title>Github Dev Finder</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <h2 class="heading">Github Dev Finder</h2>
+    <div class="search-container">
+        <input type="search" name="user-input" id="inputValue" placeholder="Enter a GitHub username..." required="">
+        <button onclick="processInput()">search</button>
+    </div>
     <div class="container">
         <div class="images">
             <img src="" alt="user image" id="image">
@@ -16,13 +23,20 @@
                 <b>Name:</b> <span class="insertname"></span>
             </div>
             <div class="followers">
-                <b>Followers: </b><dspaniv class="insertfollowers"></span>
+                <b>Followers: </b>
+                <dspaniv class="insertfollowers"></span>
+            </div>
+            <div class="following">
+                <b>following: </b>
+                <dspaniv class="insertfollowing"></span>
             </div>
             <div class="email">
                 <b>ID: </b><span class="insertID"></span>
             </div>
         </div>
     </div>
+
 </body>
 <script src="js/script.js"></script>
+
 </html>

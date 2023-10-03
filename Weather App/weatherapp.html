@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+    <div class="container">
+        <div class="header">
+            <div class="search-box">
     <input type="text" name="cityname" id="cityname" placeholder="Enter your city name">
-    <input type="submit" name="search" id="searchbtn" value="Search">
+    <button type="submit" name="search" id="searchbtn" value="Search"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></button>
+    </div></div>
+    
     <div class="weatherInfo">
+        <div class="weather-box">
         <div class="temp">
-            <b>Temperature: </b><span class="temperature"></span>
+            <div><span class="temperature"></span><span class="tcel"><sup>°C</sup></span></div>
+            <div class="feel"><b>feels-like: </b><span class="feels"></span><span class="cel">°C</span></div>
+            
+        </div></div>
+        <div class="blank">
+            
         </div>
-        <div class="windinfo">
-            <b>Wind: </b> <span class="wind"></span>
-        </div>
-        <div class="visibility">
-            <b>Humidity: </b><span class="vis"></span>
-        </div>
-    </div>
+        <div class="weather-details">
+            <div class="humidity">
+                <i class="fa-sharp fa-solid fa-droplet"></i>
+                <div class="text">
+                    <span id="humidity" class="vis">--</span><span>%</span>
+                    <p>Humidity</p>
+                </div>
+            </div>
+            <div class="wind1">
+                <i class="fa-solid fa-wind"></i>
+                <div class="text ">
+                    <span id="wind-speed" class="wind">--</span><span>Km/H</span>
+                    <p>Wind Speed</p>
+                </div>
+            </div>
+        
+    </div></div>
 </body>
 <script src="js/script.js">
 </script>
-
 </html>

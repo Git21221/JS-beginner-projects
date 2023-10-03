@@ -9,13 +9,14 @@ body {
 }
 
 .container {
-    background-color: #fff;
+    /* background-color: #fff; */
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     text-align: center;
     max-width: 400px;
     width: 100%;
+    background-color: var(--container-background);
 }
 
 h1 {
@@ -39,13 +40,14 @@ input[type="text"] {
 }
 
 button {
-    background-color: #007bff;
+    /* background-color: #007bff; */
     color: #fff;
     border: none;
     border-radius: 5px;
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+    background-color: var(--button-background);
 }
 
 button:hover {
@@ -64,4 +66,30 @@ button:hover {
 
 .invalid {
     color: red;
+}
+
+:root {
+    --background-color: #f4f4f4;
+    --text-color: #000;
+    --container-background: #fff;
+    --button-background: #007bff;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    --background-color: #333;
+    --text-color: #fff;
+    --container-background: #444;
+    --button-background: #0056b3;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
