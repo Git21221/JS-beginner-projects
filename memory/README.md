@@ -1,5 +1,9 @@
     		MEMORY GAME
 
+## RESULT
+
+![screenshot](./images/result.png)
+
 It's a simple grid game, in which you as a player needs to flip over two cards. If the two cards match thats a point for you and the card is take off the board, leaving with you the remainder that you also have to flip over. The game is completed when you flipped over all the cards.
 
 #### HTML Structure
@@ -23,7 +27,3 @@ It's a simple grid game, in which you as a player needs to flip over two cards. 
 - checkForMatch()
 - if the card chosen are the same let the clicked card be blank and let 1 be added to the score
 - else it will notify you with you picked the wrong card
-
-## RESULT
-
-![screenshot](./images/result.png)
