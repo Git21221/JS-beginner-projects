@@ -26,7 +26,7 @@ main div {
   gap: 15px;
 }
 .key {
-  border: none;
+  border: 2px solid rgb(75, 64, 64);
   width: 110px;
   height: 100px;
   background-color: rgb(75, 64, 64);
@@ -34,7 +34,8 @@ main div {
   transition: 0.3s;
   border-radius: 12px;
 }
-.clicked {
-  scale: 1.1;
+.key.clicked {
+  border-color: white;
+  transform: scale(1.1);
   opacity: 0.8;
 }
