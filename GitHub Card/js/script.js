@@ -4,6 +4,7 @@ const newname = document.querySelector('.insertname');
 const following = document.querySelector('.insertfollowing');
 const followers = document.querySelector('.insertfollowers');
 const id = document.querySelector('.insertID');
+const usernameInput = document.querySelector("#username");
 
 
 
@@ -24,7 +25,12 @@ async function profile(name="shouryasinghrathore") {
 
 function processInput() {
     let inputValue = document.getElementById("inputValue").value;
-    profile(inputValue);
+    if (inputValue.trim() !== "") {
+        usernameInput.classList.remove("search-container-error");
+        profile(inputValue);
+    } else {
+        usernameInput.classList.add("search-container-error");
+    }
 } 
 
 profile();
