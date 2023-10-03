@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif&family=Public+Sans:wght@400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #9e0142;
+  animation: color 15s infinite linear;
+  text-align: center;
+  z-index: -1;
+}
+
+@keyframes color {
+  0%   { background: #9e0142; }
+  10%  { background: #d53e4f; }
+  20%  { background: #f46d43; }
+  30%  { background: #e38c36; }
+  40%  { background: #ecb622; }
+  50%  { background: #5ac60d; }
+  60%  { background: #17a504; }
+  70%  { background: #66c2a5; }
+  80%  { background: #3288bd; }
+  90%  { background: #5e4fa2; }
+  100% { background: #36c452; }
+}
+
+
+.quote-container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+}
+
+.quote-text {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+  padding: 1rem 1rem;
+  font-family: "PT Serif", serif;
+}
+
+.quote {
+  font-size: 3.8rem;
+  font-family: "PT Serif", "Public Sans", sans-serif;
+  padding: 4rem;
+  padding-top: 0.5rem;
+}
+
+
