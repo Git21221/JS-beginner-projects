@@ -9,11 +9,15 @@
 </head>
 
 <body>
+    <audio id="winSound" src="assets/win.mp3"></audio>
+    <audio id="loseSound" src="assets/lose.mp3"></audio>
+    <audio id="endGameSound" src="assets/end.mp3"></audio>
+
     <p>Try and Guess a random number between 1 to 100</p>
     <p>You have <code>10</code> attempts to guess correctly.</p>
     <form>
         <h1>Guess a number</h1>
-        
+
         <div class="input">
             <input type="text" id="guessnum">
             <input type="submit" id="submitguess" value="Submit guess">
@@ -23,8 +27,9 @@
         <div class="prevGuess">previous Guesses: <span class="prevguess"></span></div>
         <div class="remainguess">Guesses remaining: <span class="res"></span></div>
     </div>
-    <p class=loworhigh></p>
+    <p class="loworhigh"></p>
+
+    <script src="js/script.js"></script>
 </body>
-<script src="js/script.js"></script>
 
 </html>
