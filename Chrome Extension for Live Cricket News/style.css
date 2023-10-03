@@ -1,0 +1,11 @@
+body {
+    min-width: 400px;
+    /* background-color: black; */
+    background-image: url("https://img.freepik.com/free-vector/elegant-hand-drawn-golden-floral-seamless-pattern_44538-7004.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black; 
+    font-weight: bold;
+    font-style:inherit;
+    font-size: medium;
+}
