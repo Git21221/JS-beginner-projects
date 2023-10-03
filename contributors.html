@@ -1,99 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JS Beginner Projects</title>
-    <link rel="stylesheet" href="css/style.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
 
-    <link rel="shortcut icon" href="js.png" type="image/x-icon" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS Beginner Projects</title>
 
-    <!--moved to the top for early loading-->
-    <script>
-      // GitHub repository information
-      const repoOwner = 'Git21221';
-      const repoName = 'JS-beginner-projects';
-  
-      // Fetch contributors from GitHub API
-      fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contributors`)
-          .then(response => response.json())
-          .then(contributors => {
-              const contributorsList = document.getElementById('contributors-list');
-  
-              contributors.forEach(contributor => {
-                  const listItem = document.createElement('li');
-                  listItem.classList.add('d-inline-block', 'mr-2', 'mb-2');
-  
-                  const badge = document.createElement('span');
-                  badge.classList.add('badge', 'bg-dark','m-2');
-                  badge.innerHTML = `
+  <!-- fontawesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Bootstrap Core CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+
+  <link rel="shortcut icon" href="js.png" type="image/x-icon" />
+
+  <!--moved to the top for early loading-->
+  <script>
+    // GitHub repository information
+    const repoOwner = 'Git21221';
+    const repoName = 'JS-beginner-projects';
+
+    // Fetch contributors from GitHub API
+    fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contributors`)
+      .then(response => response.json())
+      .then(contributors => {
+        const contributorsList = document.getElementById('contributors-list');
+
+        contributors.forEach(contributor => {
+          const listItem = document.createElement('li');
+          listItem.classList.add('d-inline-block', 'mr-2', 'mb-2');
+
+          const badge = document.createElement('span');
+          badge.classList.add('badge', 'bg-dark', 'm-2');
+          badge.innerHTML = `
                  <a href="${contributor.html_url}"  target="_blank">
-                 <img src="${contributor.avatar_url}" alt="${contributor.login}" width="50">
-                 <span style="margin-left: 10px;">${contributor.login}</span>
+                 <img src="${contributor.avatar_url}" alt="${contributor.login}" class="rounded-circle" width="50">
+                 <span style="margin-left: 10px;" class="text-nowrap">${contributor.login}</span>
                  </a>
                   `;
-  
-                  listItem.appendChild(badge);
-                  contributorsList.appendChild(listItem);
-              });
-          })
-          .catch(error => {
-              console.error(error);
-          });
+
+          listItem.appendChild(badge);
+          contributorsList.appendChild(listItem);
+        });
+      })
+      .catch(error => {
+        console.error(error);
+      });
   </script>
-   
-  </head>
-  <body>
-    <!--navigation section-->
-    <div class="container">
-        <div class="row mt-4">
-          <div class="col col-lg-12 col-xs-3"> 
-            <!-- Added a Navbar wrapper with Bootstrap Navbar classes -->
-            <nav class="navbar navbar-expand-md navbar-light">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <!-- Collapsible content below -->
-              <div class="collapse navbar-collapse" id="navbarNav">
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs display-7 d-flex flex-sm-column flex-md-row justify-content-evenly w-100 text-uppercase" id="myTab" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link" href="index.html" >projects</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="contributors.html" class="nav-link" data-bs-toggle="tab">contributors</a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="https://github.com/Git21221/JS-beginner-projects" class="nav-link">github</a>
-                  </li>
-                </ul>
-              </div>
-              <!-- Heading to appear below the navbar-toggler on medium screens and above -->
-              <div class="d-md-none text-center mt-3">
-                <h1 class="text-uppercase"> <span class="badge bg-primary">small javascript projects</span> </h1>
-              </div>
-            </nav>
-            <!-- Heading to appear alongside the navbar-toggler on small screens -->
-            <div class="d-none d-md-inline ml-md-2 text-center text-md-left">
-              <h1 class="text-uppercase"> <span class="badge bg-primary">small javascript projects</span> </h1>
-            </div>
-          </div>
+
+</head>
+
+<body>
+  <!-- mobile header: start -->
+  <header class="w-100 d-md-none d-block mobile-header">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="bg-primary rounded h4 p-1 fw-bold mb-0" href="#">Small Javascript Projects</h1>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars-staggered text-white fs-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="./index.html" target="_blank">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="./contributors.html" target="_blank">Contributors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="https://github.com/Git21221/JS-beginner-projects"
+                target="_blank">GitHub</a>
+            </li>
+          </ul>
         </div>
       </div>
+    </nav>
+  </header>
+  <!-- mobile header: end -->
+
+  <!-- tabs: start -->
+  <div class="container d-md-block d-none">
+    <ul
+      class="nav nav-tabs mb-3 display-7 d-flex flex-sm-column flex-md-row justify-content-evenly w-100 text-uppercase"
+      id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link" href="./index.html">projects</a>
+      </li>
+      <li class="nav-item">
+        <a href="./contributors.html" class="nav-link">contributors</a>
+      </li>
+      <li class="nav-item">
+        <a href="https://github.com/Git21221/JS-beginner-projects" class="nav-link" target="_blank">github</a>
+      </li>
+    </ul>
+    <div class="d-none d-md-inline ml-md-2 text-center text-md-left">
+      <h1 class="text-uppercase"> <span class="badge bg-primary">small javascript projects</span> </h1>
+    </div>
+  </div>
+  <!-- tabs: end -->
 
 
-    
-      <h2 class="text-center mt-4"><span class="badge bg-success text-uppercase mb-2">Contributors</span> </h2>
-      <div class="container mt-2">
-       
-        <div class="row">
-            <div class="col-12">
-                <ul id="contributors-list" class="list-inline text-center">
-                  
-                </ul>
-            </div>
-        </div>
-    </div>   
-  </body>
+  <h2 class="text-center"><span class="badge bg-success text-uppercase mb-2">Contributors</span> </h2>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <ul id="contributors-list" class="list-inline text-center">
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
