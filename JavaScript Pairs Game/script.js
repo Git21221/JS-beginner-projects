@@ -6,12 +6,13 @@ var seconds = 00;
 var tens = 00;
 var appendTens = document.getElementById("tens");
 var appendSeconds = document.getElementById("seconds");
-var Interval;
+var Interval = null;
 var images = ["sass", "git", "gulp", "css", "grunt"];
 
 var clone = images.slice(0); // duplicate array
 var cards = images.concat(clone); // merge to arrays
 
+document.getElementById("restartButton").disabled = true;
 // Shufffel function
 function shuffle(o) {
   for (
@@ -29,15 +30,15 @@ for (var i = 0; i < cards.length; i++) {
   card.dataset.view = "card";
   myCards.appendChild(card);
 
-  card.onclick = function () {
-    if (this.className != "flipped" && this.className != "correct") {
+  card.onclick = function (){
+    if (this.className != "flipped" && this.className != "correct" && Interval) {
       this.className = "flipped";
       var result = this.dataset.item;
       resultsArray.push(result);
       clearInterval(Interval);
       Interval = setInterval(startTimer, 10);
     }
-
+  
     if (resultsArray.length > 1) {
       if (resultsArray[0] === resultsArray[1]) {
         check("correct");
@@ -65,8 +66,22 @@ var win = function () {
   if (counter === 5) {
     clearInterval(Interval);
     text.innerHTML = "Your time was " + seconds + ":" + tens;
+    document.getElementById("restartButton").disabled = false;
   }
 };
+
+
+function RestartButton()
+{
+   
+location.reload();
+
+}
+
+function StartButton()
+{
+  Interval = setInterval(startTimer, 10);
+}
 
 function startTimer() {
   tens++;
