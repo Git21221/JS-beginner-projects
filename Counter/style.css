@@ -1,0 +1,22 @@
+#increment, #decrement, #reset {
+    padding: 10px 15px;
+    font-size: 18px;
+    background: #56ccf2;
+    background: -webkit-linear-gradient(to right, #56ccf2, #2f80ed);
+    background: linear-gradient(to right, #56ccf2, #2f80ed);
+    color: #f1f1f1;
+    border: none;
+    margin: 5px;
+}
+
+#main {
+    margin: 0 auto;
+    text-align: center;
+    padding: 5% 10%;
+}
+
+#displayCounter {
+    font-size: 100px;
+    font-family: impact;
+
+}
