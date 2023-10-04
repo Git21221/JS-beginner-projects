@@ -1,59 +1,103 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
 }
 
 .container {
-    max-width: 400px;
-    margin: 0 auto;
     text-align: center;
     background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-    color: #333;
+    color: #37517e;
+    margin-bottom: 20px;
+    font-size: 36px;
 }
 
 .options {
-    text-align: left;
+    margin-bottom: 30px;
+}
+
+label, input, button {
+    margin-bottom: 15px;
+    font-size: 16px;
 }
 
 input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    font-size: 16px;
-}
-
-input[type="checkbox"] {
-    margin-right: 5px;
+    width: 60px;
+    text-align: center;
 }
 
 button {
-    padding: 10px 16px;
-    font-size: 16px;
-    background-color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 15px 30px;
+    background-color: #47b2e4;
     color: white;
     border: none;
-    cursor: pointer;
-}
-
-.password {
-    margin-top: 20px;
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 18px;
-    border: 1px solid #ccc;
     border-radius: 5px;
 }
 
+#generatePassword
+{
+    margin-bottom: 0;
+}
+button:hover {
+    background-color: #37517e;
+}
+
+.password {
+    margin-top: 30px;
+}
+
+#password {
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 20px;
+    border: 2px solid #37517e;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #37517e;
+}
+
 #copyToClipboard {
-    margin-top: 10px;
-    background-color: #f1a33c;
+    background-color: #47b2e4;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+#copyToClipboard:hover {
+    background-color: #37517e;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    input[type="number"] {
+        width: 40px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
 }
