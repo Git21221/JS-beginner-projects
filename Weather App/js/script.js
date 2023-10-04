@@ -46,8 +46,6 @@ sbmt.addEventListener('click', () => {
                
             }
             
-                                
-            
         }
     }
     weatherXhr.send();

@@ -1,0 +1,89 @@
+.page{
+    display: flex;
+}
+.leftPage{
+    min-height: 100vh;
+    min-width: 35vw;
+    background: linear-gradient(169.47deg, #22052D 14.76%, #380C4A 25.62%, #3B0E46 29.25%,
+     #3D0F42 33.37%, #441436 40.15%, #33254E 46.18%, #2B2D59 52.47%, #292654 57.59%, #271F4F 62.33%, 
+     #240D37 74.06%, #22052D 88.22%, #22052D 125.39%, #22052D 154.65%, #22052D 154.67%);
+
+}
+.rightPage{
+    min-height: 100vh;
+    min-width: 65vw;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.form{
+    text-transform: uppercase;
+    width: 40vw;
+    height: 45vh;
+    font-family: Roboto;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 14px;
+    letter-spacing: 1px;
+    /* border: solid 1px violet; */
+}
+#number , #name {
+    width: 22vw;
+    height: 6vh;
+    border-radius: 4px;
+    border: 1px solid lightslategray;
+    background-color: transparent;
+    margin: 6px 0px;
+}
+.date-in{
+    width: 5vw;
+    height: 6vh;
+    border-radius: 4px;
+    border: 1px solid lightslategray;
+    background-color: transparent;
+    margin: 6px 0px;
+}
+.cvv-in{
+    width: 9vw;
+    height: 6vh;
+    border-radius: 4px;
+    border: 1px solid lightslategray;
+    background-color: transparent;
+    margin: 6px 0px;
+}
+.both{
+    display: flex;
+}
+.cvv{
+    margin-left: 1vw;
+}
+button{
+    width: 23.3vw;
+    height: 7vh;
+    border-radius: 6px;
+    border: 1px solid lightslategray;
+    background: rgba(34, 9, 48, 1);
+    color: aliceblue;
+}
+button:hover{
+    opacity: 0.8;
+    cursor: pointer;
+}
+input{
+    padding-left: 10px;
+}
+.error{
+    position: relative;
+    bottom: 15px;
+    color: tomato;
+    font-size: 8px;
+    letter-spacing: 0;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+.success{
+    color:  #2d3aac;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}

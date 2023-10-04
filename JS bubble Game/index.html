@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Bubble Game</title>
+  </head>
+  <body>
+    <div id="main">
+      <audio id="popSound">
+        <source src="pop.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      
+      <div id="panel">
+        <div id="ptop">
+          <button id="startButton">Start Game</button>
+          <div class="elem">
+            <h2>HIT</h2>
+            <div id="hit" class="box">0</div>
+          </div>
+          <div class="elem">
+            <h2>TIMER</h2>
+            <div id="timer" class="box">0</div>
+          </div>
+          <div class="elem">
+            <h2>SCORE</h2>
+            <div id="scorecard" class="box">0</div>
+          </div>
+        </div>
+        <div id="pbottom">
+          <h2 id="welcome">Welome To Bubble Game</h2>
+          <div id="instructionText">
+           
+            <h2>How to Play:</h2>
+            <ul>
+              <li>Click the "Start Game" button to begin.</li>
+              <li>Click on bubbles that match the number in the Hit Box.</li>
+              <li>For each correct click, you'll earn 10 points.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      Made with ❤️ by Mukul Rana
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
