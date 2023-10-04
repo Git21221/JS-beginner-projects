@@ -1,0 +1,92 @@
+body, html 
+{
+    margin: 0;
+    padding: 0;
+}
+
+body 
+{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(45deg, #007BFF, #00BFFF);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container 
+{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+h1 
+{
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #007BFF;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+h1:hover 
+{
+    color: #00BFFF;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.crypto-table 
+{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.crypto-table th,
+.crypto-table td 
+{
+    padding: 10px;
+    text-align: left;
+}
+
+.crypto-table th 
+{
+    background-color: #007BFF;
+    color: white;
+}
+
+.crypto-table tr:nth-child(even) 
+{
+    background-color: #f2f2f2;
+}
+
+.crypto-table tr:hover 
+{
+    background-color: #d2d2d2;
+    transform: scale(1.02);
+    transition: transform 0.2s ease-in-out;
+}
+
+.crypto-name 
+{
+    color: #333; 
+}
+
+.price-increase 
+{
+    color: green;
+}
+
+.price-decrease 
+{
+    color: red;
+}

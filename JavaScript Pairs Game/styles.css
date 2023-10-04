@@ -55,6 +55,7 @@ body {
     width: 630px;
     margin: 10px auto;
   }
+
   #container:after {
     content: "";
     display: table;

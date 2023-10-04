@@ -49,6 +49,11 @@ body {
 
 }
 
+.search-container-error {
+    border: 2px red solid;
+
+}
+
 .search-container input {
     border: none;
     outline: none;

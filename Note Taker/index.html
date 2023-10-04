@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Note Taking App</title>
+    <link rel = "icon" href = "note_icon.png" type="image/jpg">
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <div class = "container">
+        <h1>Note Taking App</h1>
+        <div class = "note-form">
+            <input type = "text" id="noteTitle" placeholder = "Title" required>
+            <textarea id = "noteContent" placeholder = "Write your note..." required></textarea>
+            <button onclick = "addNote()">Add Note</button>
+        </div>
+        <div class = "note-list" id = "noteList">
+        </div>
+    </div>
+    <script src = "script.js"></script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #f1f9fd;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container{
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+    overflow: hidden;
+    width: 300px;
+    font-weight: bolder;
+}
+
+.title{
+    margin: 0;
+} 
+
+.subtitle{
+    display: inline-block;
+    margin: 2px 0px 20px;
+    opacity: 0.8;
+}
+
+.header{
+    background-color: #3e57db;
+    color: white;
+    padding: 30px 20px;
+}
+
+.header input{
+    background-color: rgba(0,0,0,0.3);
+    border: 0;
+    border-radius: 50px;
+    color: white;
+    font-size: 14px;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+.header input:focus{
+    outline: none;
+}
+
+.userlist{
+    background-color: white;
+    list-style-type: none;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto; /*for scroll bar since max-height 400px*/
+    padding: 0;
+}
+
+.userlist li{
+    display: flex;
+    padding: 20px;
+}
+
+.userlist img{
+    border-radius: 50%;
+    object-fit: cover;
+    height: 50px;
+    width: 50px;
+}
+
+.userlist .userinfo{
+    margin-left: 10px;
+}
+
+.userlist .userinfo h4{
+    margin: 0 0 10px;
+}
+
+.userlist .userinfo p{
+    font-size: 12px;
+}
+
+/* we want border bottom on every li except last*/
+.userlist li:not(:last-of-type){
+    border-bottom: 1px solid #eee;
+}
+
+/*this class will remove the element*/
+.userlist li.hide{
+    display: none;
+}
