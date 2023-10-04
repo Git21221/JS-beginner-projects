@@ -8,19 +8,32 @@ const usernameInput = document.querySelector("#username");
 
 
 
-async function profile(name="shouryasinghrathore") {
+async function profile(name = "shouryasinghrathore") {
+    try {
+        let response = await fetch(`https://api.github.com/users/${name}`);
 
-    let quotes = await fetch(`https://api.github.com/users/${name}`)
-    let apiInfo = await quotes.json();
-    console.log(apiInfo)
-    image.setAttribute('src', apiInfo.avatar_url);
-    newname.innerHTML =apiInfo.login;
-    console.log(apiInfo.login)
-    following.innerHTML = apiInfo.following;
-    followers.innerHTML = apiInfo.followers;
-    id.innerHTML = apiInfo.id;
-
+        if (response.status === 404) {
+            profile();
+            document.getElementById("inputValue").value = "";
+            alert("Enter Valid Username");
+        } else if (response.ok) {
+            let apiInfo = await response.json();
+            console.log(apiInfo);
+            image.setAttribute('src', apiInfo.avatar_url);
+            newname.innerHTML = apiInfo.login;
+            console.log(apiInfo.login);
+            following.innerHTML = apiInfo.following;
+            followers.innerHTML = apiInfo.followers;
+            id.innerHTML = apiInfo.id;
+        } else {
+            console.error("Error fetching user data");
+            alert("Error fetching user data");
+        }
+    } catch (error) {
+        console.error("An error occurred:", error);
+    }
 }
+
 
 
 function processInput() {
