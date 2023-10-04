@@ -4,7 +4,7 @@ let board;
 let boardWidth=360;
 let boardHeight=640;
 let context;
-
+let isGamePaused = true;
 //==================bird=======================
 let birdWidth=32;// width/height=60/45=4/3
 let birdHeight=24;
@@ -32,8 +32,8 @@ let bottomPipeImg;
 
 //=========physics=========
 let velocityX= -2; //pipes moving left direction
-let velocityY = 0;
-let gravity = 0.4;
+let velocityY = -4;
+let gravity = 0.2;
 
 let gameOver = false;
 let score=0;
@@ -66,11 +66,60 @@ window.onload= function(){
     requestAnimationFrame(update);
     setInterval(placePipes,1500);// every 1.5s the pipe will be placed
     document.addEventListener("keydown",moveBird);
+    showInstructions();
 }
-
+document.addEventListener('keydown', function (e) {
+    if (e.code === 'KeyI') {
+      showInstructions();
+    }
+  });
+  // Function to show the instructions modal
+function showInstructions() {
+    // Show the instructions modal
+    isGamePaused = true;
+    const instructionsModal = document.getElementById('instructionsModal');
+    instructionsModal.style.display = 'block';
+  
+    // Hide the canvas while showing the instructions
+    board.style.display = 'none';
+  
+    // Event listener to start the game when the "Start Game" button is clicked
+    const startGameBtn = document.getElementById('startGameBtn');
+    startGameBtn.addEventListener('click', closeInstructions);
+  }
+  
+  // Function to close the instructions modal and start the game
+  function closeInstructions() {
+    // Close the instructions modal
+    const instructionsModal = document.getElementById('instructionsModal');
+    instructionsModal.style.display = 'none';
+  
+    // Show the canvas and start the game
+    board.style.display = 'block';
+    isGamePaused = false;
+    // Start the game
+    startGame();
+  }
+  // Function to start the game
+function startGame() {
+    // Add your game initialization logic here
+    // For example, you can start your game loop or set game variables.
+  
+    // Example:
+    // Initialize game variables
+    gameOver = false;
+    score = 0;
+    bird.y = birdY;
+    pipeArray = [];
+  
+    // Start your game loop or any necessary game logic here
+    requestAnimationFrame(update);
+  }
 function update(){
     requestAnimationFrame(update);
-
+    if (isGamePaused) { // Check if the game is paused
+        return;
+      }
     if(gameOver){  
         return;
     }
@@ -154,17 +203,25 @@ function placePipes(){
 
     pipeArray.push(bottomPipe);
 }
-
+// Function to start the game
+function startGame() {
+    gameOver = false;
+    score = 0;
+    bird.y = birdY;
+    pipeArray = [];
+  }
 function moveBird(e){
     if(e.code=="Space" || e.code=="ArrowUp" || e.code=="KeyX"){
-        //jump
-        velocityY=-6;   
-
+        if (!isGamePaused) { // Check if the game is not paused
+      // Jump
+      velocityY = -6; // Adjust jump strength as needed
+    }
+    else if (e.code == "KeyI") {
+        // Toggle game pause on 'I' key press
+        isGamePaused = !isGamePaused;
+      }
         if(gameOver){
-            bird.y=birdY;
-            pipeArray=[];
-            score=0;
-            gameOver=false;
+           startGame();
         }
 
     }
