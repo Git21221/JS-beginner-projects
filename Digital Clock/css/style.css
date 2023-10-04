@@ -7,6 +7,7 @@
 .text1{
     display: flex;
     justify-content: center;
+
     align-items: center;
     font-size: 3rem;
     height: 100px;
@@ -28,7 +29,6 @@
     border: 1px solid rgb(111, 111, 111);
     box-shadow: 15px 15px 3px #273938 ;
 }
-
 
 html,body{
     display: grid;

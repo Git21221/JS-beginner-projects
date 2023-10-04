@@ -19,8 +19,11 @@ function updateClock() {
     const options12Hour = { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
     const time12Hour = date.toLocaleTimeString(undefined, options12Hour);
 
+
     clock12.innerHTML = `${time12Hour}`;
     clock24.innerHTML = `${time24Hour}`;
+
+
     day.innerHTML = ` ${date}`;
     
 }
