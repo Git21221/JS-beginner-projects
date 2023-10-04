@@ -64,8 +64,8 @@ var check = function (className) {
 
 var win = function () {
   if (counter === 5) {
-    clearInterval(Interval);
-    text.innerHTML = "Your time was " + seconds + ":" + tens;
+    clearInterval(Interval); 
+    text.innerHTML = "<big><b>You Won!!</b></big>"+"<br>"+"Your time was " + seconds + ":" + tens;
     document.getElementById("restartButton").disabled = false;
   }
 };
