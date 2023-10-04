@@ -1,0 +1,136 @@
+.image{
+    position: relative;
+    margin-top: 10px;
+    top: 13px;
+}
+
+.index{
+    margin: 50px 50px 100px 50px;
+    text-align: center;
+    color:white;
+    font-size: 100px;
+    text-shadow:  brown 3px 3px;
+}
+
+body{
+    background-color: rgb(25, 25, 82);
+    background-size: 100%;
+    background-image: url("images/music1.png"); 
+   
+}
+.buttons{
+    text-align: center;
+    padding: 10px;
+    font-size: 10px;
+}
+
+.pressed{
+    box-shadow: 0 5px 5px 0 #DBEDF3;
+    opacity: 0.5;
+}
+.C{
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: white 3px 2px;
+    color:rgb(25, 25, 82);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100px;
+    width: 100px;
+    border: 5px solid;
+    border-radius: 3px;
+    border-color:rgb(3, 3, 53);
+    margin: 0 20px;
+    background-image: url("images/tom1.png");
+    background-size: 100px;
+
+}
+.A{
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: white 3px 2px;
+    color: rgb(25, 25, 82);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100px;
+    width: 100px;
+    border: 5px solid;
+    border-radius: 3px;
+    border-color:rgb(3, 3, 53);
+    margin: 0 20px;
+    background-image: url("images/tom2.png");
+    background-size: 100px;
+}
+.L{
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: white 3px 2px;
+    color:rgb(25, 25, 82);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100px;
+    width: 100px;
+    border: 5px solid;
+    border-radius: 3px;
+    border-color:rgb(3, 3, 53);
+    margin: 0 20px;
+    background-image: url("images/tom3.png");
+    background-size: 100px;
+}
+.Y{
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: white 3px 2px;
+    color:rgb(25, 25, 82);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100px;
+    width: 100px;
+    border: 5px solid;
+    border-radius: 3px;
+    border-color:rgb(3, 3, 53);
+    margin: 0 20px;
+    background-image: url("images/tom4.png");
+    background-size: 100px;
+}
+.P{
+    font-size: 60px;
+    font-weight: bold;
+    text-shadow: white 3px 2px;
+    color:rgb(25, 25, 82);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100px;
+    width: 100px;
+    border: 5px solid;
+    border-radius: 3px;
+    border-color:rgb(3, 3, 53);
+    margin: 0 20px;
+    background-image: url("images/snare.png");
+    background-size: 100px;
+}
+.S{
+    font-size: 60px;
+    color:rgb(25, 25, 82);
+    text-shadow: white 3px 2px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100px;
+    width: 100px;
+    border: 5px solid;
+    border-radius: 3px;
+    border-color:rgb(3, 3, 53);
+    margin: 0 20px;
+    background-image: url("images/kick.png");
+    background-size: 100px;
+}
+.O{
+    font-size: 60px;
+    color:rgb(25, 25, 82);
+    text-shadow: white 3px 2px;
+    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100px;
+    width: 100px;
+    border: 5px solid;
+    border-radius: 3px;
+    border-color:rgb(3, 3, 53);
+    margin: 0 20px;
+    background-image: url("images/crash.png");
+    background-size: 100px;
+}
