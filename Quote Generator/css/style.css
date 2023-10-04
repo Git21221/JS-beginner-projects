@@ -75,27 +75,90 @@ button:active {
     transform: scale(1.2);
 }
 
-.back1 {
-    background-color: aqua;
-    color: blueviolet;
+.back1 {  
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #9e0142;
+  animation: color 15s infinite linear;
+  text-align: center;
+  z-index: -1;
+  color: black;
 }
 
-.back2 {
-    background-color: rgb(254, 39, 39);
-    color: rgb(6, 6, 6);
+@keyframes color {
+  0%   { background: #9e0142; }
+  10%  { background: #d53e4f; }
+  20%  { background: #f46d43; }
+  30%  { background: #e38c36; }
+  40%  { background: #ecb622; }
+  50%  { background: #5ac60d; }
+  60%  { background: #17a504; }
+  70%  { background: #66c2a5; }
+  80%  { background: #3288bd; }
+  90%  { background: #5e4fa2; }
+  100% { background: #36c452; }
 }
 
-.back3 {
-    background-color: rgb(39, 182, 254);
-    color: rgb(237, 254, 5);
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color:whitesmoke;
+    background: #007bff;;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 1rem;
 }
 
-.back4 {
-    background-color: rgb(8, 253, 114);
-    color: rgb(10, 10, 10);
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 0.5rem;
 }
 
+.glow-on-hover:active {
+    color:whitesmoke;
+}
 
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:#007bff;;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
 
 /* /loader/ */
 
@@ -103,7 +166,7 @@ button:active {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: rgba(23, 23, 23, 0.945);
+    background: rgba(255, 255, 255, 0.4);
     display: flex;
     justify-content: center;
     align-items: center;
