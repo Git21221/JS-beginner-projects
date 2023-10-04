@@ -42,11 +42,11 @@
           listItem.classList.add('d-inline-block', 'mr-2', 'mb-2');
 
           const badge = document.createElement('span');
-          badge.classList.add('badge', 'bg-dark', 'm-2');
+          badge.classList.add('badge', 'cards', 'm-2');
           badge.innerHTML = `
                  <a href="${contributor.html_url}"  target="_blank">
-                 <img src="${contributor.avatar_url}" alt="${contributor.login}" class="rounded-circle" width="50">
-                 <span style="margin-left: 10px;" class="text-nowrap">${contributor.login}</span>
+                 <img src="${contributor.avatar_url}" alt="${contributor.login}" class="rounded-circle" width="100">
+                 <p style="margin-top: 10px;font-size:16px;" class="text-nowrap">${contributor.login}</p>
                  </a>
                   `;
 
@@ -66,7 +66,7 @@
   <header class="w-100 d-md-none d-block mobile-header">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="bg-primary rounded h4 p-1 fw-bold mb-0" href="#">Small Javascript Projects</h1>
+        <a class=" rounded h4 p-1 fw-bold mb-0" href="#">Small Javascript Projects</h1>
         </a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -106,14 +106,12 @@
         <a href="https://github.com/Git21221/JS-beginner-projects" class="nav-link" target="_blank">github</a>
       </li>
     </ul>
-    <div class="d-none d-md-inline ml-md-2 text-center text-md-left">
-      <h1 class="text-uppercase"> <span class="badge bg-primary">small javascript projects</span> </h1>
-    </div>
+
   </div>
   <!-- tabs: end -->
 
 
-  <h2 class="text-center"><span class="badge bg-success text-uppercase mb-2">Contributors</span> </h2>
+  <h2 class="text-center"><span class="badge  text-uppercase ">Contributors</span> </h2>
   <div class="container">
     <div class="row">
       <div class="col-12">
