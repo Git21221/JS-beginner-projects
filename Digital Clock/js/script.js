@@ -1,24 +1,29 @@
-// const clock = document.querySelector(".clock");
-// setInterval(() => {
-//     let date = new Date();
-//     clock.innerHTML = date.toLocaleTimeString();
-// }, 1000);
 
+const clock12 = document.querySelector(".twelve");
+const clock24 = document.querySelector(".twentyfour");
+const day = document.querySelector(".day");
 
-const clock = document.querySelector(".clock");
 
 function updateClock() {
     let date = new Date();
 
-    // 24-hour format
-    const time24Hour = date.toLocaleTimeString();
+    
 
-    // 12-hour format
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const seconds = String(date.getSeconds()).padStart(2, '0');
+
+    const time24Hour = `${hours}:${minutes}:${seconds}`;
+
+    
     const options12Hour = { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
     const time12Hour = date.toLocaleTimeString(undefined, options12Hour);
 
-    clock.innerHTML = ` ${time24Hour}<br>${time12Hour}`;
+    clock12.innerHTML = `${time12Hour}`;
+    clock24.innerHTML = `${time24Hour}`;
+    day.innerHTML = ` ${date}`;
+    
 }
 
 setInterval(updateClock, 1000);
-updateClock(); // Call it once immediately to display the time on page load
+updateClock();
