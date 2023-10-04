@@ -2,63 +2,15 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JS Beginner Projects</title>
-
-  <!-- fontawesome -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Beginner Projects - Contributors</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-  <!-- Bootstrap Core CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     crossorigin="anonymous">
-
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css" />
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    crossorigin="anonymous"></script>
-
-  <link rel="shortcut icon" href="js.png" type="image/x-icon" />
-
-  <!--moved to the top for early loading-->
-  <script>
-    // GitHub repository information
-    const repoOwner = 'Git21221';
-    const repoName = 'JS-beginner-projects';
-
-    // Fetch contributors from GitHub API
-    fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contributors`)
-      .then(response => response.json())
-      .then(contributors => {
-        const contributorsList = document.getElementById('contributors-list');
-
-        contributors.forEach(contributor => {
-          const listItem = document.createElement('li');
-          listItem.classList.add('d-inline-block', 'mr-2', 'mb-2');
-
-          const badge = document.createElement('span');
-          badge.classList.add('badge', 'bg-dark', 'm-2');
-          badge.innerHTML = `
-                 <a href="${contributor.html_url}"  target="_blank">
-                 <img src="${contributor.avatar_url}" alt="${contributor.login}" class="rounded-circle" width="50">
-                 <span style="margin-left: 10px;" class="text-nowrap">${contributor.login}</span>
-                 </a>
-                  `;
-
-          listItem.appendChild(badge);
-          contributorsList.appendChild(listItem);
-        });
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  </script>
-
 </head>
 
 <body>
@@ -75,10 +27,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="./index.html" target="_blank">Projects</a>
+              <a class="nav-link fw-bold" href="./index.html">Projects</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-bold" href="./contributors.html" target="_blank">Contributors</a>
+              <a class="nav-link fw-bold" href="./contributors.html">Contributors</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-bold" href="https://github.com/Git21221/JS-beginner-projects"
@@ -97,10 +49,10 @@
       class="nav nav-tabs mb-3 display-7 d-flex flex-sm-column flex-md-row justify-content-evenly w-100 text-uppercase"
       id="myTab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link" href="./index.html">projects</a>
+        <a class="nav-link" href="index.html">projects</a>
       </li>
       <li class="nav-item">
-        <a href="./contributors.html" class="nav-link">contributors</a>
+        <a href="contributors.html" class="nav-link">contributors</a>
       </li>
       <li class="nav-item">
         <a href="https://github.com/Git21221/JS-beginner-projects" class="nav-link" target="_blank">github</a>
@@ -112,14 +64,100 @@
   </div>
   <!-- tabs: end -->
 
-
-  <h2 class="text-center"><span class="badge bg-success text-uppercase mb-2">Contributors</span> </h2>
-  <div class="container">
+  <div class="container pb-3">
+    <h2 class="text-center"><span class="badge bg-success text-uppercase mb-5">Contributors</span></h2>
+    <div id="contributors-list" class="row">
+      <!-- Contributors will be added here -->
+    </div>
     <div class="row">
-      <div class="col-12">
-        <ul id="contributors-list" class="list-inline text-center">
-        </ul>
+      <div class="col-md-3 mx-auto">
+        <button id="load-more-button" class="btn btn-light w-100 text-uppercase mt-3">Load More</button>
       </div>
     </div>
   </div>
+
+  <script>
+    const repoOwner = 'Git21221';
+    const repoName = 'JS-beginner-projects';
+    const contributorsList = document.getElementById('contributors-list');
+    const loadMoreButton = document.getElementById('load-more-button');
+    let page = 1;
+
+    function fetchContributors() {
+      fetch(`https://api.github.com/repos/${repoOwner}/${repoName}/contributors?page=${page}&per_page=55`)
+        .then(response => response.json())
+        .then(contributors => {
+          if (contributors.length === 0) {
+            // No more contributors to load
+            loadMoreButton.style.display = 'none';
+
+            const p = document.createElement('p');
+            p.classList.add('text-center', 'mt-3', 'text-light');
+            p.innerHTML = 'No more contributors to load';
+            contributorsList.appendChild(p);
+
+            return;
+          }
+
+          contributors.forEach(contributor => {
+            const col = document.createElement('div');
+            col.classList.add('col-md-2', 'col-sm-4', 'col-6', 'mb-3');
+
+            const card = document.createElement('div');
+            card.classList.add('card', 'h-100', 'bg-dark', 'text-center', 'contributor-card');
+
+            const cardBody = document.createElement('div');
+            cardBody.classList.add('card-body');
+
+            const anchor = document.createElement('a');
+            anchor.href = contributor.html_url;
+            anchor.target = '_blank';
+            anchor.classList.add('text-decoration-none');
+
+            const image = document.createElement('img');
+            image.src = contributor.avatar_url;
+            image.alt = contributor.login;
+            image.classList.add('img-fluid', 'w-50', 'rounded-circle');
+
+            const small = document.createElement('small');
+            small.classList.add('d-block', 'mt-2');
+
+            const badge = document.createElement('span');
+            badge.classList.add('badge', 'text-bg-primary');
+            badge.innerHTML = `@${contributor.login}`;
+
+            small.appendChild(badge);
+            anchor.appendChild(image);
+            anchor.appendChild(small);
+            cardBody.appendChild(anchor);
+
+            card.appendChild(cardBody);
+            col.appendChild(card);
+
+            contributorsList.appendChild(col);
+
+          });
+
+          page++;
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+
+    loadMoreButton.addEventListener('click', fetchContributors);
+
+    // Initial load of contributors
+    fetchContributors();
+  </script>
+
+  <!-- Bootstrap Core JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    crossorigin="anonymous"></script>
+
+  <!-- Custom JS -->
+  <script src="./js/script.js"></script>
+
 </body>
+
+</html>
