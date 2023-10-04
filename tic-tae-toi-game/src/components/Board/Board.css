@@ -1,0 +1,67 @@
+.board_header{
+display: flex;
+align-items: center;
+flex-direction: row;
+justify-content: space-between;
+margin-bottom: 50px;
+}
+.board_turn{
+    border-radius: 5px;
+    background-color: var(--color-bg-light);
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+.board_restart svg{
+height: 20px;
+display: flex;
+align-items: center;
+transform-origin: center;
+transition: all 0.3s;
+}
+.board_restart:active svg{
+    transform: rotate(180deg);
+}
+.board_body{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px 20px;
+}
+.board_body .card{
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding-inline: 10px;
+}
+
+.board_body .active.shadow-blue{
+ background-color: var(--color-blue);
+}
+.board_body .active.shadow-yellow{
+    background-color: var(--color-blue);
+}
+.board_footer{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.board_footer .card{
+    gap: 15px;
+}
+.card.bg-light{
+    background-color: var(--color-gray);
+    color: var(--color-bg-dark);
+}
+.card.bg-blue{
+    background-color: var(--color-blue);
+    color: var(--color-bg-dark);
+}
+.card.bg-yellow{
+    background-color: var(--color-yellow);
+    color: var(--color-bg-dark);
+}

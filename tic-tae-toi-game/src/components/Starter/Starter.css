@@ -1,0 +1,140 @@
+.starter{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+}
+.starter_header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon{
+    display: inline-block;
+}
+.icon svg{
+    fill: var(--color-gray-dark);
+    height: 50px;
+    width: 50px;
+    vertical-align: middle;
+}
+.icon-sm svg{
+    height: 30px;
+    width: 30px;
+}
+.icon-lg svg{
+    height: 65px;  
+    width: 65px;
+}
+.icon-yellow svg{
+    fill: var(--color-yellow);
+}
+.icon-blue svg{
+    fill: var(--color-blue);
+}
+.icon-dark svg{
+    fill: var(--color-bg-dark);
+}
+.shadow-gray{
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.2);
+}
+.shadow-blue{
+    box-shadow: 0 8px 0 var(--color-blue-dark);
+}
+.shadow-yellow{
+    box-shadow: 0 8px 0 var(--color-yellow-dark);
+}
+.start_player{
+    background: var(--color-bg-dark);
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    box-shadow: inset 0 0 8px rgba((0), 0, 0, 0.2);
+}
+.card{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: var(--color-bg-light);
+    text-align: center;
+    gap: 25px;
+}
+.text-lg{
+    font-size: 1.25rem;
+}
+.text-xl{
+    font-size: 1.5rem;
+}
+.text-2xl{
+    font-size: 1.75rem;
+}
+.text-light{
+    color: var(--color-gray-light);
+}
+.text-blue{
+    color: var(--color-blue);
+}
+.text-yellow{
+    color: var(--color-yellow);
+}
+.btn{
+    background: var(--color-gray);
+    border: none;
+    font-size: 1.125rem;
+    font-weight: bold;
+    padding: 12px 25px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 10px;
+    color: var(--color-bg-light);
+    display: inline-block;
+    box-shadow: 0 6px 0 var(--color-gray-dark);
+    margin-bottom: 6px;
+    transition: all 0.2s;
+}
+.btn:hover{
+    transform: translateY(-2px);
+    --shadow-y:8px
+}
+.btn:active{
+    transform: translateY(2px);
+    --shadow-y:4px;
+}
+.btn-yellow{
+    background-color: var(--color-yellow);
+    box-shadow: 0 6px 0 var(--color-yellow-dark);
+}
+.btn-blue{
+    background-color: var(--color-blue);
+    box-shadow: 0 6px 0 var(--color-blue-dark);
+}
+.btn-sm{
+    --shadow-y:4px;
+}
+.btn-sm:hover{
+    --shadow-y:6px;
+}
+.btn-sm:hover{
+    --shadow-y:3px;
+}
+.start_player span{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    padding: 15px 10px;
+    cursor: pointer;
+}
+.start_player--active{
+    background-color: var(--color-gray);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+.start_btns{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
