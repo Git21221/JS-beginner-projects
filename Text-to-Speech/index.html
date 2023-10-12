@@ -7,19 +7,23 @@
     <title>Text to Speech</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="wrapper">
-      <header>Text to Speech</header>
+      <header>
+        <h2>Text to Speech</h2>
+      </header>
       <form action="#">
         <div class="row">
-          <label>Enter Text</label>
-          <textarea></textarea>
+          <div class="voiceSelectList">
+            <label>Select Voice:</label>
+            <div class="outer">
+              <select></select>
+            </div>
+          </div>
         </div>
         <div class="row">
-          <label>Select Voice</label>
-          <div class="outer">
-            <select></select>
-          </div>
+          <textarea placeholder="Enter Your Text Here..."></textarea>
         </div>
         <button>Convert to Speech</button>
       </form>
