@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search Button Example</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+    <style>
+        form {
+            display: flex;
+            justify-content: space-between;
+            width: 200px;
+            margin: 0 auto;
+        }
+
+        input {
+            font-family: 'Cabin', sans-serif;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            outline: none;
+            color: #333;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #000;
+            font-family: 'Cabin', sans-serif;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/search" method="GET">
+        <input type="search" name="q" placeholder="Search here...">
+        <button type="submit">Go</button>
+    </form>
+    <script>
+        document.querySelector("form").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // Get the search query from the input field.
+            var searchQuery = document.querySelector("input[name='q']").value;
+
+            // Submit the search query to the server.
+            fetch("/search", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    query: searchQuery
+                })
+            })
+                .then(response => response.json())
+                .then(results => {
+                    // Display the search results.
+                    // ...
+                });
+        });
+
+    </script>
+</body>
+
+</html>
