@@ -54,6 +54,7 @@ h1 {
 
 .newGame {
     padding: 10px 20px;
+    cursor: pointer;
     color: #aa5fff;
     background-color: #5b2da6;
     border: none;
