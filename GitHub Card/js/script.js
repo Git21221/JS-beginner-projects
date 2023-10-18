@@ -34,7 +34,11 @@ async function profile(name = "shouryasinghrathore") {
     }
 }
 
-
+function searchOnEnter() {
+    document.getElementById("inputValue").addEventListener('keypress', (n) => {
+        if (n.key === 'Enter') { processInput(); }
+    })
+}
 
 function processInput() {
     let inputValue = document.getElementById("inputValue").value;
@@ -47,3 +51,4 @@ function processInput() {
 } 
 
 profile();
+searchOnEnter();
