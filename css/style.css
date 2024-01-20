@@ -19,7 +19,8 @@
    color: #fff !important;
 }
 .Heading{
-   border-bottom: 1px solid ;
+   padding: 10px 0;
+   border-bottom: 1px solid #fff;
 }
 
 
@@ -94,12 +95,36 @@ body {
 }
 .nav-tabs{
    border-bottom: 0px;
+   border: none;
+   margin: 20px 0;
 }
 .navbar{
+   border: none;
+   padding: 15px 0;
    background-color: #141d2f;
    box-shadow: 0px 15px 10px -15px #ddd;    
 }
 .cards{
    background-color:#1e2a47 ;
    padding: 20px 40px !important;
+}
+.nav-link-custom-css{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 10px;
+   padding: 10px 20px;
+   border-radius: 10px;
+   border: 1px solid #dddddd00;
+
+}
+.svgIcons{
+   width: 25px;
+}
+
+.nav-link-custom-css:hover{
+   border: 1px solid #ddd;
+}
+.active-tab{
+   border: 1px solid #ddd;
 }
