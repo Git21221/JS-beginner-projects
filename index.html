@@ -31,22 +31,22 @@
   <header class="w-100 d-md-none d-block mobile-header">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
-        <a class="text-secondary rounded h4 p-1 fw-bold mb-0" href="#">Small Javascript Projects</h1>
-        </a>
+        <h2 class="text-secondary mobile-nav-heading rounded h4 p-1 fw-bold mb-0" href="#">Small Javascript Projects</h2>
+        
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
           aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa-solid fa-bars-staggered text-white fs-1"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link fw-bold" href="./index.html">Projects</a>
+            <li class="nav-item nav-item-mobile">
+              <a class="nav-link-custom-css-mobile fw-bold active-tab" href="./index.html">Projects</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link fw-bold" href="./contributors.html">Contributors</a>
+            <li class="nav-item nav-item-mobile">
+              <a class="nav-link-custom-css-mobile fw-bold" href="./contributors.html">Contributors</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link fw-bold" href="https://github.com/Git21221/JS-beginner-projects"
+            <li class="nav-item nav-item-mobile">
+              <a class="nav-link-custom-css-mobile fw-bold" href="https://github.com/Git21221/JS-beginner-projects"
                 target="_blank">GitHub</a>
             </li>
           </ul>
@@ -59,65 +59,109 @@
   <!-- tabs: start -->
   <div class="container d-md-block d-none">
     <ul
-      class="nav nav-tabs mb-3 display-7 d-flex flex-sm-column flex-md-row justify-content-evenly w-100 text-uppercase"
+      class="nav nav-tabs display-7 d-flex flex-sm-column flex-md-row justify-content-evenly w-100 text-uppercase"
       id="myTab" role="tablist">
       <li class="nav-item">
-        <a class="nav-link" href="index.html">projects</a>
+        <a class="nav-link-custom-css active-tab" href="index.html">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="svgIcons" fill="white"><path d="M0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48V96H384V80c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H432c-26.5 0-48-21.5-48-48V160H192v16c0 1.7-.1 3.4-.3 5L272 288h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H272c-26.5 0-48-21.5-48-48V336c0-1.7 .1-3.4 .3-5L144 224H48c-26.5 0-48-21.5-48-48V80z"/></svg>projects</a>
       </li>
       <li class="nav-item">
-        <a href="contributors.html" class="nav-link">contributors</a>
+        <a href="contributors.html" class="nav-link-custom-css">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="white" class="svgIcons"><path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM609.3 512H471.4c5.4-9.4 8.6-20.3 8.6-32v-8c0-60.7-27.1-115.2-69.8-151.8c2.4-.1 4.7-.2 7.1-.2h61.4C567.8 320 640 392.2 640 481.3c0 17-13.8 30.7-30.7 30.7zM432 256c-31 0-59-12.6-79.3-32.9C372.4 196.5 384 163.6 384 128c0-26.8-6.6-52.1-18.3-74.3C384.3 40.1 407.2 32 432 32c61.9 0 112 50.1 112 112s-50.1 112-112 112z"/></svg>contributors</a>
       </li>
       <li class="nav-item">
-        <a href="https://github.com/Git21221/JS-beginner-projects" class="nav-link" target="_blank">github</a>
+        <a href="https://github.com/Git21221/JS-beginner-projects" class="nav-link-custom-css" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" class="svgIcons" fill="white"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>github</a>
       </li>
     </ul>
-    <div class="d-none d-md-inline ml-md-2 text-center text-md-left">
+    <div class="heading-container">
       <h1 class="text-uppercase Heading"> <span class="badge">small javascript projects</span> </h1>
     </div>
   </div>
 
   
   <!-- tabs: end -->
-
+  <!-- gradient blob -->
+   <div class="blob"></div>
 
   <!--projects section-->
   <section class="gamesAndProjects container">
     <a href="./analog clock/index.html" class="hvr-sweep-to-right projectsName">Analog Clock</a>
     <a href="./alarm_clock/index.html" class="hvr-sweep-to-right projectsName">Alarm Clock</a>
+    <a href="./2D archery game/index.html" class="hvr-sweep-to-right projectsName">Archery Game</a>
+    <a href="./Blackjack_game/blackjack.html" class="hvr-sweep-to-right projectsName">Blackjack Game</a>
     <a href="./BMI calculator/BMI calculator.html" class="hvr-sweep-to-right projectsName">BMI calculator</a>
+    <a href="./Bouncing Balls/index.html" class="hvr-sweep-to-right projectsName">Bouncing Balls</a>
+    <a href="./Bubble_game/index.html" class="hvr-sweep-to-right projectsName">Bubble Game</a>
+    <a href="./JS bubble Game/index.html" class="hvr-sweep-to-right projectsName">Bubble Game 2</a>
+    <a href="./JS Calculator/index.html" class="hvr-sweep-to-right projectsName">Calculator</a>
     <a href="./calender/index.html" class="hvr-sweep-to-right projectsName">Calender</a>
+    <a href="./Chatroom Application/public/index.html" class="hvr-sweep-to-right projectsName">Chat Room Application</a>
+    <a href="./chrome-dino/index.html" class="hvr-sweep-to-right projectsName">Chrome Dino</a>
     <a href="./code visualizer/index.html" class="hvr-sweep-to-right projectsName">Code Visualizer</a>
     <a href="./Color Changing Background/Color Changing Background.html" class="hvr-sweep-to-right projectsName">Color
       Changing Background</a>
+      <a href="./CountDown/index.html" class="hvr-sweep-to-right projectsName">CountDown</a>
+      <a href="./Counter/index.html" class="hvr-sweep-to-right projectsName">Counter</a>
     <a href="./Credit Card Validate/CreditCard.html" class="hvr-sweep-to-right projectsName">Credit card validate</a>
+    <a href="./Crypto Price Tracker/index.html" class="hvr-sweep-to-right projectsName">Crpto Price Tracker</a>
     <a href="./css lineheight and letter spacing/index.html" class="hvr-sweep-to-right projectsName">
       CSS Line Height and Letter Spacing Generator
     </a>
     <a href="./css shadow generator/index.html" class="hvr-sweep-to-right projectsName">CSS Shadow Generator</a>
     <a href="./Currency Converter/currency_converter.html" class="hvr-sweep-to-right projectsName">Currency
       Converter</a>
-    <a href="./Digital Clock/digitalClock.html" class="hvr-sweep-to-right projectsName">Digital Clock</a>
+    <a href="./Dice-Game/index.html" class="hvr-sweep-to-right projectsName">Dice Game</a>
     <a href="./dictionary/index.html" class="hvr-sweep-to-right projectsName">Dictionary App</a>
+    <a href="./Digital Clock/digitalClock.html" class="hvr-sweep-to-right projectsName">Digital Clock</a>
+    <a href="./Dragon's World Game/index.html" class="hvr-sweep-to-right projectsName">Dragon's World Game</a>
+    <a href="./drawing-app/index.html" class="hvr-sweep-to-right projectsName">Drawing App</a>
+    <a href="./DrumKit/index.html" class="hvr-sweep-to-right projectsName">Drum Kit</a>
+    <a href="./Dynamic Quiz/index.html" class="hvr-sweep-to-right projectsName">Dynamic Quiz</a>
+    <a href="./Emoji_Charades/index.html" class="hvr-sweep-to-right projectsName">Emoji Charades</a>
+    <a href="./flags/index.html" class="hvr-sweep-to-right projectsName">Flags</a>
+    <a href="./Flappy_Bird/index.html" class="hvr-sweep-to-right projectsName">Flappy Bird</a>
     <a href="./game-of-life/public/index.html" class="hvr-sweep-to-right projectsName">Game of Life</a>
     <a href="./GitHub Card/workingwithapi.html" class="hvr-sweep-to-right projectsName">GitHub Card</a>
     <a href="./Guess The Number/guessthenum.html" class="hvr-sweep-to-right projectsName">Guess The Number</a>
-    <a href="./HangMan/hangman.html" class="hvr-sweep-to-right projectsName">Hang Man</a>
-    <a href="./JS Calculator/index.html" class="hvr-sweep-to-right projectsName">Calculator</a>
+    <a href="./SaveMan/index.html" class="hvr-sweep-to-right projectsName">Hangman Game</a>
+    <a href="./Heart pop up/index.html" class="hvr-sweep-to-right projectsName">Heart Popup</a>
+    <a href="./Image Slider/index.html" class="hvr-sweep-to-right projectsName">Image Slider</a>
+    <a href="./Joke_generator/meme.html" class="hvr-sweep-to-right projectsName">Joke Generator</a>
+    <a href="./Leap Year Generator/index.html" class="hvr-sweep-to-right projectsName">Leap Year Generator</a>
+      <a href="./Live User Filter/index.html" class="hvr-sweep-to-right projectsName">Live User Filter</a>
+      <a href="./3D_maze_Game/index.html" class="hvr-sweep-to-right projectsName">Maze Game</a>
+      <a href="./Minesweeper/index.html" class="hvr-sweep-to-right projectsName">Mine Sweeper</a>
+      <a href="./Morse Code Translator/index.html" class="hvr-sweep-to-right projectsName">Morse Code translator</a>
     <a href="./MovieApp/index.html" class="hvr-sweep-to-right projectsName">Movie App</a>
-    <a href="./Music App/music.html" class="hvr-sweep-to-right projectsName">Music App</a>
+    <a href="./Music Player/index.html" class="hvr-sweep-to-right projectsName">Music Player</a>
+    <a href="./musical_instrumental_app/index.html" class="hvr-sweep-to-right projectsName">Music Instrumental App</a>
+    <a href="./Note Taker/index.html" class="hvr-sweep-to-right projectsName">Note Taker</a>
+    <a href="./pacman/index.html" class="hvr-sweep-to-right projectsName">Pacman</a>
+    <a href="./Pomodoro Timer/index.html" class="hvr-sweep-to-right projectsName">Promodoro Timer</a>
+    <a href="./JavaScript Pairs Game/index.html" class="hvr-sweep-to-right projectsName">Pair Game</a>
+    <a href="./QR Generator vinodjangid07/index.html" target="_blank" class="hvr-sweep-to-right projectsName">QR Code Generator</a>
+    <a href="./QR Code Generator/index.html" target="_blank" class="hvr-sweep-to-right projectsName">QR Code Generator 2</a>
+    
+    <a href="./QUIZ--APP/index.html" class="hvr-sweep-to-right projectsName">Quiz App</a>
     <a href="./Quote Generator/quote_generator.html" class="hvr-sweep-to-right projectsName">Quote Generator</a>
     <a href="Race Game/index.html" class="hvr-sweep-to-right projectsName">Race Game</a>
     <a href="./Random Password Generator/index.html" class="hvr-sweep-to-right projectsName">Random Password
       Generator</a>
+      <a href="./RockPaperScissor/index.html" class="hvr-sweep-to-right projectsName">Rock Paper Scissor</a>
+      <a href="./Schulte Table/index.html" class="hvr-sweep-to-right projectsName">Schulte Table</a>
+      <a href="./Scramble words/index.html" class="hvr-sweep-to-right projectsName">Scramble Words</a>
     <a href="./Simon_Game/index.html" class="hvr-sweep-to-right projectsName">Simon Game</a>
     <a href="./Snake Game/index.html" class="hvr-sweep-to-right projectsName">Snake Game</a>
-    <a href="./Tic Tac Toe/tictactoe.html" class="hvr-sweep-to-right projectsName">Tic Tac Toe</a>
-    <a href="./QR Code Generator/index.html" class="hvr-sweep-to-right projectsName">QR Code Generator</a>
+    <a href="./Speech_detection/index.html" class="hvr-sweep-to-right projectsName">Speech Detection</a>
+    <a href="./Temperature_convertor/index.html" class="hvr-sweep-to-right projectsName">Temperature Convertor</a>
     <a href="./Text-to-Speech/index.html" class="hvr-sweep-to-right projectsName">Text to Speech Convertor</a>
+    <a href="./Tic Tac Toe/tictactoe.html" class="hvr-sweep-to-right projectsName">Tic Tac Toe</a>
     <a href="./Timer/timer.html" class="hvr-sweep-to-right projectsName">Timer</a>
     <a href="./To Do List/todolist.html" class="hvr-sweep-to-right projectsName">To Do List</a>
+    <a href="./Trivia Quiz Game/index.html" class="hvr-sweep-to-right projectsName">Trivia Quiz Game</a>
     <a href="./Unlimited Color/unlimitedcolor.html" class="hvr-sweep-to-right projectsName">Unlimited Color</a>
     <a href="./Weather App/weatherapp.html" class="hvr-sweep-to-right projectsName">Weather App</a>
+    <a href="./Wekipidia_clone/index.html" class="hvr-sweep-to-right projectsName">Wikipedia clone</a>
   </section>
 
   <!-- Bootstrap Core JS -->
