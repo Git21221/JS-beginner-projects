@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- _     
+
+██╗░░░██╗██╗███╗░░██╗░█████╗░██████╗░
+██║░░░██║██║████╗░██║██╔══██╗██╔══██╗
+╚██╗░██╔╝██║██╔██╗██║██║░░██║██║░░██║
+░╚████╔╝░██║██║╚████║██║░░██║██║░░██║
+░░╚██╔╝░░██║██║░╚███║╚█████╔╝██████╔╝
+░░░╚═╝░░░╚═╝╚═╝░░╚══╝░╚════╝░╚═════╝░
+░░░░░██╗░█████╗░███╗░░██╗░██████╗░██╗██████╗░
+░░░░░██║██╔══██╗████╗░██║██╔════╝░██║██╔══██╗
+░░░░░██║███████║██╔██╗██║██║░░██╗░██║██║░░██║
+██╗░░██║██╔══██║██║╚████║██║░░╚██╗██║██║░░██║
+╚█████╔╝██║░░██║██║░╚███║╚██████╔╝██║██████╔╝
+░╚════╝░╚═╝░░╚═╝╚═╝░░╚══╝░╚═════╝░╚═╝╚═════╝░ -->
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#000">
+        <meta name="description" content="Vinod Jangid | QR CODE GENERATOR" />
+        <meta name="keywords" content="Vinod Jangid, QR GENERATOR" />
+        <meta name="author" content="Vinod Jangid" />
+    
+        <meta property="og:title" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:site_name" content="" />
+        <meta property="og:description" content="" />
+        <meta name="twitter:title" content="" />
+        <meta name="twitter:image" content="" />
+        <meta name="twitter:url" content="" />
+        <meta name="twitter:card" content="" />
+    
+        <title>QR GENERATOR</title>
+        <link rel="icon" type="image/x-icon" href="../src/images/favicon.png">
+        <!-- aos cdn -->
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <!-- stylesheet -->
+        <link rel="stylesheet" href="home.css">
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+          integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Passions+Conflict&family=Orbitron&family=Fira+Code&family=Orbitron">
+        <!-- google icons -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+     
+      </head>
+<body>
+    <header></header>
+    <main>
+        <div class="top-logo-container">
+            <img src="../src/images/logo-for-black.png" alt="">
+        </div>
+
+        <div class="main-container">      
+            <input type="text" name="text" class="input" id="input" placeholder="Enter Text here...." required>
+            <button class="submit" id="submit">GENERATE</button>
+
+        </div>
+
+        <div class="Qr-container" id="Qr-container">
+            <div class="loader" id="loader">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+                <div class="bar4"></div>
+                <div class="bar5"></div>
+                <div class="bar6"></div>
+                <div class="bar7"></div>
+                <div class="bar8"></div>
+                <div class="bar9"></div>
+                <div class="bar10"></div>
+                <div class="bar11"></div>
+                <div class="bar12"></div>
+            </div>
+            <img src="" alt="" class="qr-code" id="qr-code">
+            <div class="buttonContainer">
+                <div class="downloadBtnContainer">
+                    <h1 class="downloadHeading">Download</h1>
+                    <div class="buttonRow">
+                    <button class="download" id="forjpg">JPG</button>
+                    <button class="download" id="forpng">PNG</button>
+                    <button class="download" id="forsvg">SVG</button>
+                </div>
+                </div>
+                
+                <div class="exit" id="exit">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+    <footer>
+        <div class="footerContainer">
+            <p>Design & Built by <a href="https://github.com/vinodjangid07">@Vinodjangid07 </a>| <i class="far fa-copyright"></i> twentytwentythree</p>
+        </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+<script src="FileSaver.js"></script>
+</html>
