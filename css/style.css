@@ -20,6 +20,7 @@
 }
 ::-webkit-scrollbar-thumb{
  background-color: #f85165;
+ border-radius: 2px;
 }
 
 
@@ -105,7 +106,7 @@ a:active {
   column-gap: 20px;
   align-items: center;
   justify-content: center;
-  padding: 0 20px;
+  padding: 0 20px 100px 20px;
 }
 .hvr-sweep-to-right{
   position: relative;
@@ -134,13 +135,24 @@ a:active {
 }
 .navbar{
   border: none;
-  padding: 15px 0;
-  background-color: #141d2f;
-  box-shadow: 0px 15px 10px -15px #ddd;    
+  padding: 25px 0;
+  background-color: #272e58;
 }
 .cards{
   background-color:#1e2a47 ;
   padding: 20px 40px !important;
+}
+.nav-item-mobile{
+  width: 100%;
+  padding: 15px 5px;
+}
+.nav-item-mobile a{
+  padding: 10px 10px;
+  border-radius: 5px;
+  background-color: #252949;
+}
+.mobile-nav-heading{
+  color: rgb(235, 235, 235) !important;
 }
 .nav-link-custom-css{
   background-color: #2d325a;
@@ -171,6 +183,7 @@ a:active {
 @media screen and (max-width:768px) {
 
   .gamesAndProjects{
+    padding: 100px 30px 100px 30px;
     margin: auto;
   }
   .blob{
@@ -178,5 +191,8 @@ a:active {
   }
   .heading-container{
     margin: 50px 0;
+  }
+  .navbar>.container{
+    gap: 20px !important;
   }
 }
