@@ -1,8 +1,7 @@
 # JavaScript Beginner Projects
 
 ## Here you will get everything from click listener to api call making games and many more..
-
-![screenshot](image-1.png)
+![thumbnail](https://github.com/vinodjangid07/JS-beginner-projects/assets/86096184/995f1061-bf66-4568-b074-3b2a6a02c0cd)
 
 # How can I contribute in `JS beginner Project`?
 
