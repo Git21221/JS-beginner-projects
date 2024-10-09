@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code to OpenAI Chat</title>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        #qrcode {
+            margin: 20px 0;
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Scan to Chat with OpenAI</h1>
+        <canvas id="qrcode"></canvas>
+        <footer>
+            Powered by <a href="https://openai.com/" target="_blank">OpenAI</a>
+        </footer>
+    </div>
+
+    <script>
+        function generateQRCode() {
+            const chatURL = "https://chat.openai.com/";
+            QRCode.toCanvas(document.getElementById('qrcode'), chatURL, function (error) {
+                if (error) {
+                    console.error('QR Code generation error:', error);
+                } else {
+                    console.log('QR Code generated successfully!');
+                }
+            });
+        }
+
+        // Generate QR code on page load
+        generateQRCode();
+    </script>
+</body>
+</html>
