@@ -1,0 +1,12 @@
+Turn on the Simon game console to start a new game.
+The game console will produce a short sequence of button presses, beginning with just one. For example, it may light up and play a sound for the red button.
+You must replicate the exact sequence by pressing the corresponding buttons in the same order. If the sequence is "red," you press the red button.
+The console will then add one more step to the sequence, and you must repeat the longer sequence accurately.
+Continue to follow the pattern as it grows longer, always starting from the beginning of the sequence.
+If you make a mistake and press the wrong button or get the order wrong, the game will signal the mistake, and the round will end.
+The game will display your level, which represents how many steps you correctly completed in the sequence.
+Scoring:
+The level in the Simon game is typically based on the number of steps in the sequence you complete correctly before making a mistake. The higher your score, the better your memory and concentration skills are.
+
+
+
