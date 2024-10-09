@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-a-Mole Game</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        #score {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-gap: 10px;
+        }
+
+        .square {
+            width: 100px;
+            height: 100px;
+            background-color: #ccc;
+            border: 2px solid #333;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .mole {
+            background-color: #007bff;
+            border-radius: 50%;
+            width: 60%;
+            height: 60%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Whack-a-Mole</h1>
+    <div id="score">Score: 0</div>
+    <div class="grid">
+        <div class="square" data-id="0"></div>
+        <div class="square" data-id="1"></div>
+        <div class="square" data-id="2"></div>
+        <div class="square" data-id="3"></div>
+        <div class="square" data-id="4"></div>
+        <div class="square" data-id="5"></div>
+        <div class="square" data-id="6"></div>
+        <div class="square" data-id="7"></div>
+        <div class="square" data-id="8"></div>
+    </div>
+
+    <script>
+        const squares = document.querySelectorAll('.square');
+        const scoreDisplay = document.getElementById('score');
+        let score = 0;
+        let molePosition;
+        let hitPosition;
+        let currentTime = 60;
+        let timerId = null;
+
+        function randomSquare() {
+            squares.forEach(square => {
+                square.classList.remove('mole');
+            });
+
+            let randomSquare = squares[Math.floor(Math.random() * 9)];
+            randomSquare.classList.add('mole');
+
+            molePosition = randomSquare.dataset.id;
+        }
+
+        squares.forEach(square => {
+            square.addEventListener('mousedown', () => {
+                if (square.dataset.id === molePosition) {
+                    score++;
+                    scoreDisplay.textContent = `Score: ${score}`;
+                    molePosition = null;
+                }
+            });
+        });
+
+        function moveMole() {
+            timerId = setInterval(randomSquare, 800);
+        }
+
+        function countdown() {
+            currentTime--;
+            if (currentTime === 0) {
+                clearInterval(timerId);
+                alert(`Game Over! Your final score is ${score}`);
+            }
+        }
+
+        moveMole();
+        setInterval(countdown, 1000);
+    </script>
+</body>
+</html>

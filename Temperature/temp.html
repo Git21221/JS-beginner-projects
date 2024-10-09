@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <input type="number" id="inputValue" placeholder="Enter temperature">
+        <select id="inputUnit">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="kelvin">Kelvin</option>
+        </select>
+        <select id="outputUnit">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="kelvin">Kelvin</option>
+        </select>
+        <button onclick="convertTemperature()">Convert</button>
+        <h2 id="result"></h2>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            const inputValue = parseFloat(document.getElementById('inputValue').value);
+            const inputUnit = document.getElementById('inputUnit').value;
+            const outputUnit = document.getElementById('outputUnit').value;
+            let result;
+
+            if (isNaN(inputValue)) {
+                result = 'Please enter a valid number';
+            } else {
+                if (inputUnit === 'celsius') {
+                    if (outputUnit === 'fahrenheit') {
+                        result = (inputValue * 9/5) + 32;
+                    } else if (outputUnit === 'kelvin') {
+                        result = inputValue + 273.15;
+                    } else {
+                        result = inputValue;
+                    }
+                } else if (inputUnit === 'fahrenheit') {
+                    if (outputUnit === 'celsius') {
+                        result = (inputValue - 32) * 5/9;
+                    } else if (outputUnit === 'kelvin') {
+                        result = (inputValue - 32) * 5/9 + 273.15;
+                    } else {
+                        result = inputValue;
+                    }
+                } else if (inputUnit === 'kelvin') {
+                    if (outputUnit === 'celsius') {
+                        result = inputValue - 273.15;
+                    } else if (outputUnit === 'fahrenheit') {
+                        result = (inputValue - 273.15) * 9/5 + 32;
+                    } else {
+                        result = inputValue;
+                    }
+                }
+            }
+
+            document.getElementById('result').textContent = `Result: ${result} ${outputUnit.charAt(0).toUpperCase() + outputUnit.slice(1)}`;
+        }
+    </script>
+</body>
+</html>
